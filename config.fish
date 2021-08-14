@@ -31,6 +31,7 @@ end
 function fish_greeting -d "Поздороваемся"
     set_color $fish_color_autosuggestion
     # echo "Я полностью работоспособен и все мои цепи функционируют идеально."
-    ddate | pokemonsay -N
+    # ddate | pokemonsay -N
+    ddate | ponysay -c
     set_color normal
 end

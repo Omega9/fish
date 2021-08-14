@@ -171,7 +171,7 @@ end
 
 ### NET
 function www --wraps='python -m SimpleHTTPServer 8000' --description 'Simple web-server'
-    python -m SimpleHTTPServer 8000 $argv;
+    python -m SimpleHTTPServer 8000;
 end
 
 function myip --description 'What is my IP?'
