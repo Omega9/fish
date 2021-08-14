@@ -2,7 +2,8 @@
 My fish config
 
 ## Deps
-- Xclip for pbcopy & pbpaste
+- Xclip
+- notify-send
 - [Exa](https://the.exa.website/)
 - [Youtube-dl](https://youtube-dl.org/)
 - Tor (optional)
