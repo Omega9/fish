@@ -119,6 +119,14 @@ function df --description 'alias df df -h'
     command df -h $argv;
 end
 
+function cat --wraps='bat' --description 'A cat(1) clone with wings'
+    bat $argv;
+end
+
+function diff --wraps='delta' --description 'A viewer for git and diff output'
+    delta $argv;
+end
+
 function top --wraps='sudo htop' --description 'Htop'
     sudo htop $argv;
 end

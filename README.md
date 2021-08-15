@@ -4,7 +4,9 @@ My fish config
 ## Deps
 - Xclip for `pbcopy`/`pbpaste`
 - notify-send for `done`
-- [Exa](https://the.exa.website/) for `ls`
+- [Exa](https://the.exa.website/) for `ls` and `tree`
+- [Bat](https://github.com/sharkdp/bat) for `cat`
+- [Delta](https://github.com/dandavison/delta) for `diff`
 - [Youtube-dl](https://youtube-dl.org/)
 - Tor for torifying Youtube-dl (optional)
 - [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) for `fish_greeting` (optional)

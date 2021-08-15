@@ -20,6 +20,15 @@ SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_1tydl:torify\x20youtube\x2ddl
 SETUVAR _fish_abbr_1ydl:youtube\x2ddl
 SETUVAR _fish_abbr_tydl:torify\x20youtube\x2ddl
+SETUVAR _fish_abbr_tyta_2D_aac:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20aac\x20
+SETUVAR _fish_abbr_tyta_2D_best:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20best\x20
+SETUVAR _fish_abbr_tyta_2D_flac:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20flac\x20
+SETUVAR _fish_abbr_tyta_2D_m4a:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20m4a\x20
+SETUVAR _fish_abbr_tyta_2D_mp3:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20mp3\x20
+SETUVAR _fish_abbr_tyta_2D_opus:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20opus\x20
+SETUVAR _fish_abbr_tyta_2D_vorbis:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20vorbis\x20
+SETUVAR _fish_abbr_tyta_2D_wav:torify\x20youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20wav\x20
+SETUVAR _fish_abbr_tytv_2D_best:torify\x20youtube\x2ddl\x20\x2df\x20bestvideo\x2bbestaudio\x20
 SETUVAR _fish_abbr_ydl:youtube\x2ddl
 SETUVAR _fish_abbr_yta_2D_aac:youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20aac\x20
 SETUVAR _fish_abbr_yta_2D_best:youtube\x2ddl\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20best\x20
