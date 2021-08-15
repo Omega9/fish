@@ -9,6 +9,16 @@ abbr yta-vorbis 'youtube-dl --extract-audio --audio-format vorbis '
 abbr yta-wav 'youtube-dl --extract-audio --audio-format wav '
 abbr ytv-best 'youtube-dl -f bestvideo+bestaudio '
 
+abbr tyta-aac 'torify youtube-dl --extract-audio --audio-format aac '
+abbr tyta-best 'torify youtube-dl --extract-audio --audio-format best '
+abbr tyta-flac 'torify youtube-dl --extract-audio --audio-format flac '
+abbr tyta-m4a 'torify youtube-dl --extract-audio --audio-format m4a '
+abbr tyta-mp3 'torify youtube-dl --extract-audio --audio-format mp3 '
+abbr tyta-opus 'torify youtube-dl --extract-audio --audio-format opus '
+abbr tyta-vorbis 'torify youtube-dl --extract-audio --audio-format vorbis '
+abbr tyta-wav 'torify youtube-dl --extract-audio --audio-format wav '
+abbr tytv-best 'torify youtube-dl -f bestvideo+bestaudio '
+
 ### Functions
 
 ## Pacman
@@ -57,7 +67,7 @@ function unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock P
 end
 
 ## Bash
-function b --description "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
+function b --description "Exec command in bash. Useful when copy-pasting commands with incompatible syntax to fish "
     bash -c "$argv"
 end
 
@@ -212,10 +222,19 @@ function ydl --wraps='youtube-dl' --description 'Youtube-dl'
     youtube-dl $argv;
 end
 
+function ydlb --wraps='youtube-dl -a' --description 'Youtube-dl batch'
+    youtube-dl -a $argv;
+end
+
 function tydl --wraps='torify youtube-dl' --description 'Youtube-dl (Tor)'
     torify youtube-dl $argv;
 end
 
+function tydlb --wraps='torify youtube-dl -a' --description 'Youtube-dl batch (Tor)'
+    torify youtube-dl -a $argv;
+end
+
+### The most needed function
 function rickroll --description 'the terminal rickroll'
     curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
 end
