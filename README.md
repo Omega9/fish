@@ -9,6 +9,8 @@ My fish config
 - [Delta](https://github.com/dandavison/delta) for `diff`
 - [Youtube-dl](https://youtube-dl.org/)
 - Tor for torifying Youtube-dl (optional)
+- Pandoc for `docx2md` (optional)
+- [Micro editor](https://micro-editor.github.io/) (optional)
 - [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) for `fish_greeting` (optional)
 - [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) or [Ponysay](https://erkin.party/ponysay/) for `fish_greeting` (optional)
 
