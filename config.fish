@@ -17,6 +17,12 @@
 # https://omega9.web.app/
 # My fish config.
 
+# Set PATH
+set -x PATH $PATH $HOME/Applications $HOME/.local/bin
+
+# Export
+set -gx EDITOR micro
+
 # BobTheFish settings
 set -g theme_powerline_fonts yes
 set -g theme_color_scheme nord
@@ -35,7 +41,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-function fish_greeting -d "Поздороваемся"
+function fish_greeting -d "Lasita-a diri saluton"
     set_color $fish_color_autosuggestion
     # echo "Я полностью работоспособен и все мои цепи функционируют идеально."
     # ddate | pokemonsay -N

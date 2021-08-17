@@ -89,6 +89,15 @@ function cp --description 'cp safely'
     command cp -i $argv;
 end
 
+function rmrf  --description 'move to trash recursively'
+    kioclient5 mv (echo (readlink -e $argv)) trash:/
+end
+
+function emptytrash --description 'Empty trash bin'
+    ktrash5 --empty
+    and echo "Trash bin is empty"
+end
+
 function mkcd --description "Create and cd to directory"
     mkdir $argv
     and cd $argv
@@ -117,6 +126,10 @@ end
 
 function df --description 'alias df df -h'
     command df -h $argv;
+end
+
+function edit --wraps='micro' --description 'Edit file'
+    micro $argv;
 end
 
 function cat --wraps='bat' --description 'A cat(1) clone with wings'
@@ -164,6 +177,17 @@ end
 
 function pbpaste  --description "Paste data from the Clipboard"
     xclip -selection clipboard -o
+end
+
+# By https://gist.github.com/ttscoff
+function docx2md --description "Convert docx to markdown: docx2md [source] [target]"
+  pandoc -o "$2" --extract-media=(dirname "$argv[2]") "$argv[1]"
+end
+
+# By https://gist.github.com/ttscoff
+function findgist --description 'select gist from list and display contents'
+  # requires fzf (brew install fzf) and gist (brew install gist)
+  gist -r (gist -l | awk -F/ '{print $NF}' | fzf --layout="reverse" -q "$argv" | awk '{ print $1 }')
 end
 
 # Prepend `sudo` to `nano` command if file is not editable by current user
@@ -223,6 +247,10 @@ end
 
 function transfer --description "Upload file to transfer.sh"
     curl --progress-bar --upload-file $argv https://transfer.sh/(basename $argv)
+end
+
+function showgit --description "Show git origin"
+    open (git remote get-url origin)
 end
 
 ### Youtube-dl
