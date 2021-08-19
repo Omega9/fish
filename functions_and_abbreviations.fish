@@ -158,6 +158,7 @@ function backup --argument filename --description 'Backup file'
     cp $filename $filename.bak
 end
 
+# Get error messages from journalctl
 function jctl --wraps='journalctl -p 3 -xb' --description 'Get error messages from journalctl'
     journalctl -p 3 -xb $argv;
 end
@@ -189,6 +190,11 @@ function pbpaste  --description "Paste data from the Clipboard"
     xclip -selection clipboard -o
 end
 
+# Generate password
+function generate_password
+    head /dev/urandom | tr -dc \[:graph:\] | head -c 30 && echo
+end
+
 # By https://gist.github.com/ttscoff
 function docx2md --description "Convert docx to markdown: docx2md [source] [target]"
     pandoc -o "$2" --extract-media=(dirname "$argv[2]") "$argv[1]"
@@ -217,9 +223,9 @@ function nano
 end
 
 ## Untar
-function untar --wraps='tar -zxvf ' --description 'Untar'
-    tar -zxvf  $argv;
-end
+# function untar --wraps='tar -zxvf ' --description 'Untar'
+#    tar -zxvf  $argv;
+# end
 
 ### NET
 function myip --description 'What is my IP?'
@@ -228,6 +234,10 @@ end
 
 function localip --description 'What is my local IP?'
     ip -o route get to 1.1.1.1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'
+end
+
+function interfaces
+    ip address | grep -P --only-matching "(\d: \w+)|(state \w+)|(link/\w+ [a-f0-9:]+)|(inet [0-9.]+)"
 end
 
 function wget --description 'Download with Wget'

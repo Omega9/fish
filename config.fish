@@ -22,6 +22,7 @@ set -x PATH $PATH $HOME/Applications $HOME/.local/bin
 
 # Export
 set -gx EDITOR micro
+set --export GIT_EDITOR micro
 
 # BobTheFish settings
 set -g theme_powerline_fonts yes

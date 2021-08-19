@@ -30,6 +30,7 @@
 - [to-fish](https://github.com/joehillen/to-fish)
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [done](https://github.com/franciscolourenco/done)
+- [extract](https://github.com/oh-my-fish/plugin-extract)
 
 `/functions` содержит fisher и все установленные с его помощью функции.
 
