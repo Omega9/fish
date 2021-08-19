@@ -34,12 +34,13 @@ This configuration has [fisher](https://github.com/jorgebucaran/fisher) installe
 `/functions` contains fisher and all functions installed with it.
 
 All functions and abbreviations I added are contained in `functions_and_abbreviations.fish`
-Some part I carried over from my zsh configuration. Some of them were added by me, others may have come across to you before on the Github.-+
+Some part I carried over from my zsh configuration. Some of them were added by me, others may have come across to you before on the Github.
 
 ## Instructions
 1. Modify `config.fish` and `functions_and_abbreviations.fish` to your likings
 2. Add anything to your PATH with `fish_add_path`
 3. `fisher update` to update functions
+
 ## Dependencies and recommendations
 - Xclip for `pbcopy`/`pbpaste`
 - notify-send for `done`

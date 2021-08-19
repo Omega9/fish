@@ -57,7 +57,6 @@
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
 
 * * *
-
 ## Прочее
 - [fish logo](https://github.com/fish-shell/fish-shell/issues/114)
 - [fish logo](https://github.com/laughedelic/fish_logo) для `fish_greeting`
