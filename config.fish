@@ -22,11 +22,22 @@ set -x PATH $PATH $HOME/Applications $HOME/.local/bin
 
 # Export
 set -gx EDITOR micro
+set -gx BROWSER brave
 set --export GIT_EDITOR micro
 
 # BobTheFish settings
 set -g theme_powerline_fonts yes
 set -g theme_color_scheme nord
+
+# Another Nord theme for fish
+# source "$HOME/.config/fish/nord.fish"
+
+# Nord color theme for fzf
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
+    --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
+    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
 
 # Done settings
 set -U __done_min_cmd_duration 20000
