@@ -249,6 +249,10 @@ function wget --description 'Download with Wget'
     command wget -c $argv;
 end
 
+function wgetb --description 'Batch download with Wget'
+    command wget -c -i $argv;
+end
+
 function ping --description 'Ping'
     command ping -c 5 $argv;
 end
