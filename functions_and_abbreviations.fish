@@ -1,4 +1,6 @@
 ### Abbreviations
+
+# Youtube-dl
 abbr yta-aac 'youtube-dl --extract-audio --audio-format aac '
 abbr yta-best 'youtube-dl --extract-audio --audio-format best '
 abbr yta-flac 'youtube-dl --extract-audio --audio-format flac '
@@ -9,6 +11,7 @@ abbr yta-vorbis 'youtube-dl --extract-audio --audio-format vorbis '
 abbr yta-wav 'youtube-dl --extract-audio --audio-format wav '
 abbr ytv-best 'youtube-dl -f bestvideo+bestaudio '
 
+# Torified Youtube-dl
 abbr tyta-aac 'torify youtube-dl --extract-audio --audio-format aac '
 abbr tyta-best 'torify youtube-dl --extract-audio --audio-format best '
 abbr tyta-flac 'torify youtube-dl --extract-audio --audio-format flac '
@@ -21,7 +24,7 @@ abbr tytv-best 'torify youtube-dl -f bestvideo+bestaudio '
 
 ### Functions
 
-## Pacman
+# Pacman
 function i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
     sudo pacman -S $argv;
 end
@@ -66,17 +69,17 @@ function unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock P
     sudo rm /var/lib/pacman/db.lck $argv;
 end
 
-## Bash
+# Bash
 function b --description "Exec command in bash. Useful when copy-pasting commands with incompatible syntax to fish "
     bash -c "$argv"
 end
 
-## Root privileges
+# Root privileges
 function doas --description 'doas'
     command doas -- $argv;
 end
 
-## Confirm before overwriting something
+# Confirm before overwriting something
 function rm --description 'rm safely'
     command rm -i $argv;
 end
@@ -89,11 +92,12 @@ function cp --description 'cp safely'
     command cp -i $argv;
 end
 
-function rmrf  --description 'move to trash recursively'
+# Trash bin
+function rmrf --description 'move to trash recursively'
     kioclient5 mv (echo (readlink -e $argv)) trash:/
 end
 
-function emptytrash --description 'Empty trash bin'
+function emptytrash --wraps='ktrash5 --empty' --description 'Empty trash bin'
     ktrash5 --empty
     and echo "Trash bin is empty"
 end
@@ -108,6 +112,7 @@ function copypath --description "Copy full file path"
     echo "copied to clipboard"
 end
 
+# Exa
 function ls --wraps='exa --long --header --classify --icons' --description 'ls'
     exa --long --header --classify --icons $argv;
 end
@@ -128,22 +133,27 @@ function df --description 'alias df df -h'
     command df -h $argv;
 end
 
+# Micro
 function edit --wraps='micro' --description 'Edit file'
     micro $argv;
 end
 
+# Bat
 function cat --wraps='bat' --description 'A cat(1) clone with wings'
     bat $argv;
 end
 
+# Delta
 function diff --wraps='delta' --description 'A viewer for git and diff output'
     delta $argv;
 end
 
+# Htop
 function top --wraps='sudo htop' --description 'Htop'
     sudo htop $argv;
 end
 
+# Backup file
 function backup --argument filename --description 'Backup file'
     cp $filename $filename.bak
 end
@@ -181,13 +191,13 @@ end
 
 # By https://gist.github.com/ttscoff
 function docx2md --description "Convert docx to markdown: docx2md [source] [target]"
-  pandoc -o "$2" --extract-media=(dirname "$argv[2]") "$argv[1]"
+    pandoc -o "$2" --extract-media=(dirname "$argv[2]") "$argv[1]"
 end
 
 # By https://gist.github.com/ttscoff
-function findgist --description 'select gist from list and display contents'
-  # requires fzf (brew install fzf) and gist (brew install gist)
-  gist -r (gist -l | awk -F/ '{print $NF}' | fzf --layout="reverse" -q "$argv" | awk '{ print $1 }')
+function findgist --description 'Select gist from list and display contents'
+    # requires fzf (brew install fzf) and gist (brew install gist)
+    gist -r (gist -l | awk -F/ '{print $NF}' | fzf --layout="reverse" -q "$argv" | awk '{ print $1 }')
 end
 
 # Prepend `sudo` to `nano` command if file is not editable by current user
@@ -212,10 +222,6 @@ function untar --wraps='tar -zxvf ' --description 'Untar'
 end
 
 ### NET
-function www --wraps='python -m SimpleHTTPServer 8000' --description 'Simple web-server'
-    python -m SimpleHTTPServer 8000;
-end
-
 function myip --description 'What is my IP?'
     curl ifconfig.co
 end
@@ -230,6 +236,10 @@ end
 
 function ping --description 'Ping'
     command ping -c 5 $argv;
+end
+
+function www --wraps='python -m SimpleHTTPServer 8000' --description 'Simple web-server'
+    python -m SimpleHTTPServer 8000;
 end
 
 function qrencode
