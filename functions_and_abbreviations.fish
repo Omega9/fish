@@ -158,6 +158,11 @@ function backup --argument filename --description 'Backup file'
     cp $filename $filename.bak
 end
 
+# Compress git repo
+function gitprune --description 'Compress git repo'
+    git gc --aggressive --prune=now
+end
+
 # Get error messages from journalctl
 function jctl --wraps='journalctl -p 3 -xb' --description 'Get error messages from journalctl'
     journalctl -p 3 -xb $argv;
