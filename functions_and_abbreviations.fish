@@ -69,6 +69,11 @@ function unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock P
     sudo rm /var/lib/pacman/db.lck $argv;
 end
 
+# "command not found"
+function fish_command_not_found
+      __fish_default_command_not_found_handler $argv[1]
+end
+
 # Bash
 function b --description "Exec command in bash. Useful when copy-pasting commands with incompatible syntax to fish "
     bash -c "$argv"
