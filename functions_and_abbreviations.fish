@@ -126,8 +126,19 @@ function tree --wraps='exa --tree --level=2 --long --header --classify --icons' 
     exa --tree --level=2 --long --header --classify --icons $argv;
 end
 
+# fd
+function find --description 'Find with fd'
+   command fd -H $argv;
+end
+
+# grep
+# function grep --description 'Color grep'
+#    command grep --color=auto $argv;
+# end
+
+# ripgrep
 function grep --description 'Color grep'
-    command grep --color=auto $argv;
+   command rg --color=auto $argv;
 end
 
 function du --description 'Count space'

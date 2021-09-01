@@ -48,12 +48,15 @@
 - [Exa](https://the.exa.website/) для `ls` и `tree`
 - [Bat](https://github.com/sharkdp/bat) для `cat`
 - [Delta](https://github.com/dandavison/delta) для `diff`
+- [fd](https://github.com/sharkdp/fd) для `find`
+- [ripgrep](https://github.com/BurntSushi/ripgrep) для `grep`
 - [Youtube-dl](https://youtube-dl.org/)
 - Tor для Youtube-dl
 - Pandoc для `docx2md`
 - [Gist](https://github.com/defunkt/gist)
+- [fzf](https://github.com/junegunn/fzf)
 - [Micro editor](https://micro-editor.github.io/)
-- *(optional)* `kioclient5` и `ktrash5` из KDE для корзины
+- *(опционально)* `kioclient5` и `ktrash5` из KDE для корзины
 - *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) для `fish_greeting`
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
 

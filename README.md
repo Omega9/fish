@@ -48,10 +48,13 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 - [Exa](https://the.exa.website/) for `ls` and `tree`
 - [Bat](https://github.com/sharkdp/bat) for `cat`
 - [Delta](https://github.com/dandavison/delta) for `diff`
+- [fd](https://github.com/sharkdp/fd) for `find`
+- [ripgrep](https://github.com/BurntSushi/ripgrep) for `grep`
 - [Youtube-dl](https://youtube-dl.org/)
 - Tor for torifying Youtube-dl
 - Pandoc for `docx2md`
 - [Gist](https://github.com/defunkt/gist)
+- [fzf](https://github.com/junegunn/fzf)
 - [Micro editor](https://micro-editor.github.io/)
 - *(optional)* `kioclient5` and `ktrash5` from KDE for trash bin
 - *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) for `fish_greeting`
