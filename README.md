@@ -50,7 +50,7 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 - [Delta](https://github.com/dandavison/delta) for `diff`
 - [fd](https://github.com/sharkdp/fd) for `find`
 - [ripgrep](https://github.com/BurntSushi/ripgrep) for `grep`
-- [Youtube-dl](https://youtube-dl.org/)
+- [Youtube-dl](https://youtube-dl.org/), but I recommend [yt-dlp](https://github.com/yt-dlp/yt-dlp) with a [drop-in](https://aur.archlinux.org/packages/yt-dlp-drop-in)
 - Tor for torifying Youtube-dl
 - Pandoc for `docx2md`
 - [Gist](https://github.com/defunkt/gist)
