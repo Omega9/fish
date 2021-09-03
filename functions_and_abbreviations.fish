@@ -319,3 +319,13 @@ end
 function rickroll --description 'the terminal rickroll'
     curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
 end
+
+### ascii-image-converter
+### https://github.com/TheZoraiz/ascii-image-converter
+function image-to-ascii --description 'Convert image to ASCII-art'
+    ascii-image-converter $argv  -f -C -s .
+end
+
+function image-to-braille --description 'Convert image to Braille-art'
+    ascii-image-converter $argv  -f -C -b -s .
+end

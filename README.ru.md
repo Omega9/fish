@@ -57,6 +57,7 @@
 - [fzf](https://github.com/junegunn/fzf)
 - [Micro editor](https://micro-editor.github.io/)
 - *(опционально)* `kioclient5` и `ktrash5` из KDE для корзины
+- *(опционально)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
 - *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) для `fish_greeting`
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
 

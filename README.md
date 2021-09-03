@@ -57,6 +57,7 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 - [fzf](https://github.com/junegunn/fzf)
 - [Micro editor](https://micro-editor.github.io/)
 - *(optional)* `kioclient5` and `ktrash5` from KDE for trash bin
+- *(optional)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
 - *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) for `fish_greeting`
 - *(optional)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) or [Ponysay](https://erkin.party/ponysay/) for `fish_greeting`
 
