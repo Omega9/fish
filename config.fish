@@ -19,6 +19,7 @@
 
 # Set PATH
 set -x PATH $PATH $HOME/Applications $HOME/.local/bin
+set -x GOPATH $HOME/.gopath
 
 # Export
 set -gx EDITOR micro
