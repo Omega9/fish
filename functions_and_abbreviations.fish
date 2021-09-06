@@ -24,49 +24,163 @@ abbr tytv-best 'torify youtube-dl -f bestvideo+bestaudio '
 
 ### Functions
 
+# Pacman & Aura help
+function p-h --description 'Pacman functions'
+    echo -n "Pacman functions
+    ‣ p-i - Install
+    ‣ p-u - Update
+    ‣ p-s - Search
+    ‣ p-rdd - Remove package without dependencies
+    ‣ p-r - Remove
+    ‣ p-p - Purge (rm pkgs no longer included in any repos)
+    ‣ p-ac - Autoclean (clean up all local caches)
+    ‣ p-ai - Info
+    ‣ p-ar - Autoremove (rm deps no longer needed)
+    ‣ p-c - Clean
+    ‣ p-unlock - Unlock Pacman
+    "
+end
+
+function a-h --description 'Aura functions'
+    echo -n "Aura functions
+    ‣ a-b - Store a JSON record of all installed packages
+    ‣ a-br - Restore a saved record. Rolls back and uninstalls as necessary
+    ‣ a-bc - Delete all but the most recent n saved states
+    ‣ a-bl - Show all saved package state filenames
+
+    ‣ a-c - Downgrade a package
+    ‣ a-cs - Search the cache for files that match a regex
+    ‣ a-cc - Delete all but recent n versions of each cached package
+    ‣ a-cv - Delete cache
+
+    ‣ a-o - Display orphan packages
+    ‣ a-oa - Change install reason to Explicitly installed
+    ‣ a-oj - Uninstall all orphan packages
+
+    ‣ a-i - Install
+    ‣ a-u - Upgrade
+    ‣ a-ai - Info
+    ‣ a-s - Search
+    ‣ a-pb - Display PKGBUILD
+    ‣ a-d - List dependencies
+    "
+end
+
 # Pacman
-function i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
+function p-i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
     sudo pacman -S $argv;
 end
 
-function u --wraps='sudo pacman -Syu' --description 'Update (pacman -Syu)'
+function p-u --wraps='sudo pacman -Syu' --description 'Update (pacman -Syu)'
     sudo pacman -Syu $argv;
 end
 
-function s --wraps='pacman -Ss' --description 'Search (pacman -Ss)'
+function p-s --wraps='pacman -Ss' --description 'Search (pacman -Ss)'
     pacman -Ss $argv;
 end
 
-function rdd --wraps='sudo pacman -Rdd ' --description 'Remove package without dependencies (pacman -Rdd)'
+function p-rdd --wraps='sudo pacman -Rdd ' --description 'Remove package without dependencies (pacman -Rdd)'
     sudo pacman -Rdd $argv;
 end
 
-function r --wraps='sudo pacman -Rs' --description 'Remove (pacman -Rs)'
+function p-r --wraps='sudo pacman -Rs' --description 'Remove (pacman -Rs)'
     sudo pacman -Rs $argv;
 end
 
-function p --wraps='sudo pacman -Qmq | pacman -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
+function p-p --wraps='sudo pacman -Qmq | pacman -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
     sudo pacman -Qmq | pacman -Rs - $argv;
 end
 
-function ac --wraps='sudo pacman -Sc' --description 'Autoclean (clean up all local caches)'
+function p-ac --wraps='sudo pacman -Sc' --description 'Autoclean (clean up all local caches)'
     sudo pacman -Sc $argv;
 end
 
-function ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
+function p-ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
     pacman -Si $argv;
 end
 
-function ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
+function p-ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
     sudo pacman -Qdtq | pacman -Rs – $argv;
 end
 
-function c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
+function p-c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
     sudo pacman -Scc $argv;
 end
 
-function unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
+function p-unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
     sudo rm /var/lib/pacman/db.lck $argv;
+end
+
+# Aura - Installing Packages
+function a-i --wraps='sudo aura -A' --description 'Install (aura -A)'
+    sudo aura -A $argv;
+end
+
+function a-u --wraps='sudo aura -Au' --description 'Upgrade (aura -Au)'
+    sudo aura -Au
+end
+
+function a-ai --wraps='sudo aura -Ai' --description 'Info (aura -Ai)'
+    sudo aura -Ai $argv;
+end
+
+function a-s --wraps='sudo aura -As' --description 'Search (aura -As)'
+    sudo aura -As $argv;
+end
+
+function a-pb --wraps='sudo aura -Ap' --description 'Display PKGBUILD (aura -Ap)'
+    sudo aura -Ap $argv;
+end
+
+function a-d --wraps='sudo aura -Ad' --description 'List dependencies (aura -Ad)'
+    sudo aura -Ad $argv;
+end
+
+# Aura - Package Set Snapshots
+function a-b --wraps='sudo aura -B' --description 'Store a JSON record of all installed packages (aura -B)'
+    sudo aura -B
+end
+
+function a-br --wraps='sudo aura -Br' --description 'Restore a saved record. Rolls back and uninstalls as necessary (aura -Br)'
+    sudo aura -Br
+end
+
+function a-bc --wraps='sudo aura -Bc' --description 'Delete all but the most recent n saved states (aura -Bc)'
+    sudo aura -Bc $argv;
+end
+
+function a-bl --wraps='aura -Bl' --description 'Show all saved package state filenames (aura -Bl)'
+    aura -Bl
+end
+
+# Aura - Downgrading via the Package Cache
+function a-c --wraps='sudo aura -C' --description 'Downgrade a package (aura -C)'
+    sudo aura -C $argv;
+end
+
+function a-cs --wraps='sudo aura -Cs' --description 'Search the cache for files that match a regex (aura -Cs)'
+    sudo aura -Cs $argv;
+end
+
+function a-cc --wraps='sudo aura -Cc' --description 'Delete all but recent n versions of each cached package (aura -Cc)'
+    sudo aura -Cc $argv;
+end
+
+function a-cv --wraps='sudo aura -Cv' --description 'Delete cache (aura -Cv)'
+    sudo aura -Cv
+end
+
+# Aura - Managing Orphan Packages
+function a-o --wraps='aura -O' --description 'Display orphan packages (aura -O)'
+    aura -O
+end
+
+function a-oa --wraps='sudo aura -Oa' --description 'Change install reason to Explicitly installed (aura -Oa)'
+    sudo aura -Oa $argv;
+end
+
+function a-oj --wraps='sudo aura -Oj' --description 'Uninstall all orphan packages (aura -Oj)'
+    sudo aura -Oj
 end
 
 # "command not found"

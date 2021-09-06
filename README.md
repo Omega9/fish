@@ -37,6 +37,8 @@ This configuration has [fisher](https://github.com/jorgebucaran/fisher) installe
 All functions and abbreviations I added are contained in `functions_and_abbreviations.fish`
 Some part I carried over from my zsh configuration. Some of them were added by me, others may have come across to you before on the Github.
 
+[![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
+
 ## Instructions
 1. Modify `config.fish` and `functions_and_abbreviations.fish` to your likings
 2. Add anything to your PATH with `fish_add_path`
@@ -45,6 +47,7 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 ## Dependencies and recommendations
 - Xclip for `pbcopy`/`pbpaste`
 - notify-send for `done`
+- [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
 - [Exa](https://the.exa.website/) for `ls` and `tree`
 - [Bat](https://github.com/sharkdp/bat) for `cat`
 - [Delta](https://github.com/dandavison/delta) for `diff`

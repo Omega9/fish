@@ -37,6 +37,8 @@
 Все функции и аббревиатуры, добавленные мною, содержатся в `functions_and_abbreviations.fish`
 Некоторую часть я перенёс из своей конфигурации zsh. Часть из них добавлена мною, другие могли попадаться вам прежде на просторах Github.
 
+[![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
+
 ## Инструкция
 1. Исправьте `config.fish` и `functions_and_abbreviations.fish` на свой вкус
 2. Добавьте необходимые пути в PATH с помощью `fish_add_path`
@@ -45,6 +47,7 @@
 ## Зависимости и рекомендации
 - Xclip для `pbcopy`/`pbpaste`
 - notify-send для `done`
+- [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
 - [Exa](https://the.exa.website/) для `ls` и `tree`
 - [Bat](https://github.com/sharkdp/bat) для `cat`
 - [Delta](https://github.com/dandavison/delta) для `diff`

@@ -26,6 +26,9 @@ set -gx EDITOR micro
 set -gx BROWSER brave
 set --export GIT_EDITOR micro
 
+# Bookmarks directory for to-fish
+set -U TO_DIR $HOME/.bookmarks
+
 # BobTheFish settings
 set -g theme_powerline_fonts yes
 set -g theme_color_scheme nord
