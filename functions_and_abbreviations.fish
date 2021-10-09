@@ -383,6 +383,10 @@ function wgetb --description 'Batch download with Wget'
     command wget -c -i $argv;
 end
 
+function wgets --description 'Download website with Wget'
+    command wget --mirror --convert-links --adjust-extension --page-requisites --no-parent $argv;
+end
+
 function ping --description 'Ping'
     command ping -c 5 $argv;
 end

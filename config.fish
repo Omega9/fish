@@ -21,6 +21,13 @@
 set -x PATH $PATH $HOME/Applications $HOME/.local/bin
 set -x GOPATH $HOME/.gopath
 
+## Audio plugins
+set -x VST_PATH /usr/lib/vst /usr/local/lib/vst $HOME/.vst
+set -x LXVST_PATH /usr/lib/lxvst /usr/local/lib/lxvst $HOME/.lxvst
+set -x LADSPA_PATH /usr/lib/ladspa /usr/local/lib/ladspa $HOME/.ladspa
+set -x LV2_PATH /usr/lib/lv2 /usr/local/lib/lv2 $HOME/.lv2
+set -x DSSI_PATH /usr/lib/dssi /usr/local/lib/dssi $HOME/.dssi
+
 # Export
 set -gx EDITOR micro
 set -gx BROWSER brave
