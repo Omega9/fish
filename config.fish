@@ -18,8 +18,10 @@
 # My fish config.
 
 # Set PATH
-set -x PATH $PATH $HOME/Applications $HOME/.local/bin
+set -x GOROOT $HOME/.local/bin/go
+set -x GOBIN $GOROOT/bin
 set -x GOPATH $HOME/.gopath
+set -x PATH $PATH $HOME/Applications $HOME/.local/bin $GOBIN
 
 ## Audio plugins
 set -x VST_PATH /usr/lib/vst /usr/local/lib/vst $HOME/.vst

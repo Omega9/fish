@@ -433,6 +433,20 @@ function tydlb --wraps='torify youtube-dl -a' --description 'Youtube-dl batch (T
     torify youtube-dl -a $argv;
 end
 
+### CPU Scaling governors for realtime audio
+### https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
+function cpugov-performance --wraps='sudo cpupower frequency-set -g performance' --description 'Run the CPU at the maximum frequency'
+    sudo cpupower frequency-set -g performance
+end
+
+function cpugov-ondemand --wraps='sudo cpupower frequency-set -g ondemand' --description 'Run the CPU at the maximum frequency'
+    sudo cpupower frequency-set -g ondemand
+end
+
+function cpugov-schedutil --wraps='sudo cpupower frequency-set -g schedutil' --description 'Run the CPU at the maximum frequency'
+    sudo cpupower frequency-set -g schedutil
+end
+
 ### The most needed function
 function rickroll --description 'the terminal rickroll'
     curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
