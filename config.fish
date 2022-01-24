@@ -36,7 +36,7 @@ set -gx BROWSER brave
 set --export GIT_EDITOR micro
 
 # Bookmarks directory for to-fish
-set -U TO_DIR $HOME/.bookmarks
+# set -U TO_DIR $HOME/.tofish
 
 # BobTheFish settings
 set -g theme_powerline_fonts yes
