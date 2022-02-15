@@ -54,7 +54,8 @@
 - [fd](https://github.com/sharkdp/fd) для `find`
 - [ripgrep](https://github.com/BurntSushi/ripgrep) для `grep`
 - [Youtube-dl](https://youtube-dl.org/), но я рекомендую использовать [yt-dlp](https://github.com/yt-dlp/yt-dlp) с [подменой](https://aur.archlinux.org/packages/yt-dlp-drop-in)
-- Tor для Youtube-dl
+- [Gallery-dl](https://github.com/mikf/gallery-dl)
+- Tor для Youtube-dl и Gallery-dl
 - Pandoc для `docx2md`
 - [Gist](https://github.com/defunkt/gist)
 - [fzf](https://github.com/junegunn/fzf)

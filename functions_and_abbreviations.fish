@@ -433,6 +433,15 @@ function tydlb --wraps='torify youtube-dl -a' --description 'Youtube-dl batch (T
     torify youtube-dl -a $argv;
 end
 
+# Gallery-dl
+function gdl --wraps='gallery-dl' --description 'Gallery-dl'
+    gallery-dl $argv;
+end
+
+function tgdl --wraps='torify gallery-dl' --description 'Gallery-dl  (Tor)'
+    torify gallery-dl $argv;
+end
+
 ### CPU Scaling governors for realtime audio
 ### https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
 function cpugov-performance --wraps='sudo cpupower frequency-set -g performance' --description 'Run the CPU at the maximum frequency'
