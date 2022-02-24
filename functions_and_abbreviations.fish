@@ -367,6 +367,10 @@ function myip --description 'What is my IP?'
     curl ifconfig.co
 end
 
+function whatismyip --description 'What is my IP?'
+    curl ifconfig.co
+end
+
 function localip --description 'What is my local IP?'
     ip -o route get to 1.1.1.1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'
 end
@@ -400,7 +404,7 @@ function qrencode
 end
 
 function weather --description "Show weather"
-    resize -s $LINES 125
+    # resize -s $LINES 125
     curl wttr.in/$argv
 end
 
