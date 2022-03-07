@@ -442,7 +442,7 @@ function gdl --wraps='gallery-dl' --description 'Gallery-dl'
     gallery-dl $argv;
 end
 
-function tgdl --wraps='torify gallery-dl' --description 'Gallery-dl  (Tor)'
+function tgdl --wraps='torify gallery-dl' --description 'Gallery-dl (Tor)'
     torify gallery-dl $argv;
 end
 
@@ -452,11 +452,11 @@ function cpugov-performance --wraps='sudo cpupower frequency-set -g performance'
     sudo cpupower frequency-set -g performance
 end
 
-function cpugov-ondemand --wraps='sudo cpupower frequency-set -g ondemand' --description 'Run the CPU at the maximum frequency'
+function cpugov-ondemand --wraps='sudo cpupower frequency-set -g ondemand' --description 'Scales the frequency dynamically'
     sudo cpupower frequency-set -g ondemand
 end
 
-function cpugov-schedutil --wraps='sudo cpupower frequency-set -g schedutil' --description 'Run the CPU at the maximum frequency'
+function cpugov-schedutil --wraps='sudo cpupower frequency-set -g schedutil' --description 'Scheduler-driven CPU frequency selection'
     sudo cpupower frequency-set -g schedutil
 end
 
