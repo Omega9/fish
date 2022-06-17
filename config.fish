@@ -70,7 +70,7 @@ end
 function fish_greeting -d "Lasita-a diri saluton"
     set_color $fish_color_autosuggestion
     # echo "Я полностью работоспособен и все мои цепи функционируют идеально."
-    # ddate | pokemonsay -N
-    ddate | ponysay -c
+    ddate | pokemonsay -N
+    # ddate | ponysay -c
     set_color normal
 end

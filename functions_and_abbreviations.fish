@@ -442,8 +442,17 @@ function gdl --wraps='gallery-dl' --description 'Gallery-dl'
     gallery-dl $argv;
 end
 
+# Gallery-dl
+function gdlb --wraps='gallery-dl -i' --description 'Gallery-dl batch'
+    gallery-dl -i $argv;
+end
+
 function tgdl --wraps='torify gallery-dl' --description 'Gallery-dl (Tor)'
     torify gallery-dl $argv;
+end
+
+function tgdl --wraps='torify gallery-dl -i' --description 'Gallery-dl batch (Tor)'
+    torify gallery-dl -i $argv;
 end
 
 ### CPU Scaling governors for realtime audio
