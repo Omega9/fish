@@ -22,7 +22,8 @@ set -x GOROOT (go env GOROOT)
 set -x GOPATH $HOME/src/go
 set -x GOBIN $GOROOT/bin
 set -x GOTOOLS $GOROOT/pkg/tool/
-set -x PATH $PATH $HOME/Applications $HOME/.local/bin $GOROOT/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin
+set -x PNPM_HOME $HOME/.local/share/pnpm
+set -x PATH $PATH $HOME/Applications $HOME/.local/bin $GOROOT/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PNPM_HOME
 
 ## Audio plugins
 set -x VST_PATH /usr/lib/vst /usr/local/lib/vst $HOME/.vst

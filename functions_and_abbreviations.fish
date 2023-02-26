@@ -100,7 +100,7 @@ function p-ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
 end
 
 function p-ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
-    sudo pacman -Qdtq | pacman -Rs – $argv;
+    sudo pacman -Qdtq | sudo pacman -Rs – $argv;
 end
 
 function p-c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
