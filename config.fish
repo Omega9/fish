@@ -27,14 +27,16 @@ set -x PATH $PATH $HOME/Applications $HOME/.local/bin $GOROOT/bin $GOPATH/bin $H
 
 ## Audio plugins
 set -x VST_PATH /usr/lib/vst /usr/local/lib/vst $HOME/.vst
+set -x VST3_PATH /usr/lib/vst3 /usr/local/lib/vst3 $HOME/.vst3
 set -x LXVST_PATH /usr/lib/lxvst /usr/local/lib/lxvst $HOME/.lxvst
 set -x LADSPA_PATH /usr/lib/ladspa /usr/local/lib/ladspa $HOME/.ladspa
 set -x LV2_PATH /usr/lib/lv2 /usr/local/lib/lv2 $HOME/.lv2
 set -x DSSI_PATH /usr/lib/dssi /usr/local/lib/dssi $HOME/.dssi
+set -x CLAP_PATH /usr/lib/clap/ /usr/local/lib/clap $HOME/.clap
 
 # Export
 set -gx EDITOR micro
-set -gx BROWSER brave
+set -gx BROWSER vivaldi-stable
 set --export GIT_EDITOR micro
 
 # Bookmarks directory for to-fish
