@@ -421,37 +421,37 @@ function showgit --description "Show git origin"
 end
 
 ### Youtube-dl
-function ydl --wraps='youtube-dl' --description 'Youtube-dl'
+function ydl --wraps='youtube-dl --cookies-from-browser vivaldi' --description 'Youtube-dl'
     youtube-dl --cookies-from-browser vivaldi $argv;
 end
 
-function ydlb --wraps='youtube-dl -a' --description 'Youtube-dl batch'
+function ydlb --wraps='youtube-dl --cookies-from-browser vivaldi -a' --description 'Youtube-dl batch'
     youtube-dl --cookies-from-browser vivaldi -a $argv;
 end
 
-function tydl --wraps='torify youtube-dl' --description 'Youtube-dl (Tor)'
+function tydl --wraps='torify youtube-dl --cookies-from-browser vivaldi' --description 'Youtube-dl (Tor)'
     torify youtube-dl --cookies-from-browser vivaldi $argv;
 end
 
-function tydlb --wraps='torify youtube-dl -a' --description 'Youtube-dl batch (Tor)'
+function tydlb --wraps='torify youtube-dl --cookies-from-browser vivaldi -a' --description 'Youtube-dl batch (Tor)'
     torify youtube-dl --cookies-from-browser vivaldi -a $argv;
 end
 
 # Gallery-dl
-function gdl --wraps='gallery-dl' --description 'Gallery-dl'
+function gdl --wraps='gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl'
     gallery-dl --cookies-from-browser vivaldi $argv;
 end
 
 # Gallery-dl
-function gdlb --wraps='gallery-dl -i' --description 'Gallery-dl batch'
+function gdlb --wraps='gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch'
     gallery-dl --cookies-from-browser vivaldi -i $argv;
 end
 
-function tgdl --wraps='torify gallery-dl' --description 'Gallery-dl (Tor)'
+function tgdl --wraps='torify gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl (Tor)'
     torify gallery-dl --cookies-from-browser vivaldi $argv;
 end
 
-function tgdl --wraps='torify gallery-dl -i' --description 'Gallery-dl batch (Tor)'
+function tgdl --wraps='torify gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch (Tor)'
     torify gallery-dl --cookies-from-browser vivaldi -i $argv;
 end
 
