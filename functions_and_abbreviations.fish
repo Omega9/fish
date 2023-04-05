@@ -422,37 +422,37 @@ end
 
 ### Youtube-dl
 function ydl --wraps='youtube-dl' --description 'Youtube-dl'
-    youtube-dl $argv;
+    youtube-dl --cookies-from-browser vivaldi $argv;
 end
 
 function ydlb --wraps='youtube-dl -a' --description 'Youtube-dl batch'
-    youtube-dl -a $argv;
+    youtube-dl --cookies-from-browser vivaldi -a $argv;
 end
 
 function tydl --wraps='torify youtube-dl' --description 'Youtube-dl (Tor)'
-    torify youtube-dl $argv;
+    torify youtube-dl --cookies-from-browser vivaldi $argv;
 end
 
 function tydlb --wraps='torify youtube-dl -a' --description 'Youtube-dl batch (Tor)'
-    torify youtube-dl -a $argv;
+    torify youtube-dl --cookies-from-browser vivaldi -a $argv;
 end
 
 # Gallery-dl
 function gdl --wraps='gallery-dl' --description 'Gallery-dl'
-    gallery-dl $argv;
+    gallery-dl --cookies-from-browser vivaldi $argv;
 end
 
 # Gallery-dl
 function gdlb --wraps='gallery-dl -i' --description 'Gallery-dl batch'
-    gallery-dl -i $argv;
+    gallery-dl --cookies-from-browser vivaldi -i $argv;
 end
 
 function tgdl --wraps='torify gallery-dl' --description 'Gallery-dl (Tor)'
-    torify gallery-dl $argv;
+    torify gallery-dl --cookies-from-browser vivaldi $argv;
 end
 
 function tgdl --wraps='torify gallery-dl -i' --description 'Gallery-dl batch (Tor)'
-    torify gallery-dl -i $argv;
+    torify gallery-dl --cookies-from-browser vivaldi -i $argv;
 end
 
 ### CPU Scaling governors for realtime audio
