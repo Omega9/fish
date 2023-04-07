@@ -1,26 +1,38 @@
 ### Abbreviations
 
-# Youtube-dl
-abbr yta-aac 'youtube-dl --extract-audio --audio-format aac '
-abbr yta-best 'youtube-dl --extract-audio --audio-format best '
-abbr yta-flac 'youtube-dl --extract-audio --audio-format flac '
-abbr yta-m4a 'youtube-dl --extract-audio --audio-format m4a '
-abbr yta-mp3 'youtube-dl --extract-audio --audio-format mp3 '
-abbr yta-opus 'youtube-dl --extract-audio --audio-format opus '
-abbr yta-vorbis 'youtube-dl --extract-audio --audio-format vorbis '
-abbr yta-wav 'youtube-dl --extract-audio --audio-format wav '
-abbr ytv-best 'youtube-dl -f bestvideo+bestaudio '
+# Yt-dlp extract
+abbr yta-aac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'
+abbr yta-best 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format best'
+abbr yta-flac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format flac'
+abbr yta-m4a 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format m4a'
+abbr yta-mp3 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format mp3'
+abbr yta-opus 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format opus'
+abbr yta-vorbis 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format vorbis'
+abbr yta-wav 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format wav'
+abbr ytv-best 'yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
 
-# Torified Youtube-dl
-abbr tyta-aac 'torify youtube-dl --extract-audio --audio-format aac '
-abbr tyta-best 'torify youtube-dl --extract-audio --audio-format best '
-abbr tyta-flac 'torify youtube-dl --extract-audio --audio-format flac '
-abbr tyta-m4a 'torify youtube-dl --extract-audio --audio-format m4a '
-abbr tyta-mp3 'torify youtube-dl --extract-audio --audio-format mp3 '
-abbr tyta-opus 'torify youtube-dl --extract-audio --audio-format opus '
-abbr tyta-vorbis 'torify youtube-dl --extract-audio --audio-format vorbis '
-abbr tyta-wav 'torify youtube-dl --extract-audio --audio-format wav '
-abbr tytv-best 'torify youtube-dl -f bestvideo+bestaudio '
+# Torified Yt-dlp extract
+abbr tyta-aac 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'
+abbr tyta-best 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format best'
+abbr tyta-flac 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format flac'
+abbr tyta-m4a 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format m4a'
+abbr tyta-mp3 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format mp3'
+abbr tyta-opus 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format opus'
+abbr tyta-vorbis 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format vorbis'
+abbr tyta-wav 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format wav'
+abbr tytv-best 'torify yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
+
+# Yt-dlp 
+abbr ydl 'yt-dlp --cookies-from-browser vivaldi'
+abbr ydlb 'yt-dlp --cookies-from-browser vivaldi -a'
+abbr tydl 'torify yt-dlp --cookies-from-browser vivaldi'
+abbr tydlb 'torify yt-dlp --cookies-from-browser vivaldi -a'
+
+# Gallery-dl
+abbr gdl 'gallery-dl --cookies-from-browser vivaldi'
+abbr gdlb 'gallery-dl --cookies-from-browser vivaldi -i'
+abbr tgdl 'torify gallery-dl --cookies-from-browser vivaldi'
+abbr tgdlb 'torify gallery-dl --cookies-from-browser vivaldi -i'
 
 ### Functions
 
@@ -420,40 +432,39 @@ function showgit --description "Show git origin"
     open (git remote get-url origin)
 end
 
-### Youtube-dl
-function ydl --wraps='youtube-dl --cookies-from-browser vivaldi' --description 'Youtube-dl'
-    youtube-dl --cookies-from-browser vivaldi $argv;
-end
+### Yt-dlp
+# function ydl --wraps='yt-dlp --cookies-from-browser vivaldi' --description 'Yt-dlp'
+#     yt-dlp --cookies-from-browser vivaldi $argv;
+# end
+# 
+# function ydlb --wraps='yt-dlp --cookies-from-browser vivaldi -a' --description 'Yt-dlp batch'
+#     yt-dlp --cookies-from-browser vivaldi -a $argv;
+# end
+# 
+# function tydl --wraps='torify yt-dlp --cookies-from-browser vivaldi' --description 'Yt-dlp (Tor)'
+#     torify yt-dlp --cookies-from-browser vivaldi $argv;
+# end
+# 
+# function tydlb --wraps='torify yt-dlp --cookies-from-browser vivaldi -a' --description 'Yt-dlp batch (Tor)'
+#     torify yt-dlp --cookies-from-browser vivaldi -a $argv;
+# end
 
-function ydlb --wraps='youtube-dl --cookies-from-browser vivaldi -a' --description 'Youtube-dl batch'
-    youtube-dl --cookies-from-browser vivaldi -a $argv;
-end
-
-function tydl --wraps='torify youtube-dl --cookies-from-browser vivaldi' --description 'Youtube-dl (Tor)'
-    torify youtube-dl --cookies-from-browser vivaldi $argv;
-end
-
-function tydlb --wraps='torify youtube-dl --cookies-from-browser vivaldi -a' --description 'Youtube-dl batch (Tor)'
-    torify youtube-dl --cookies-from-browser vivaldi -a $argv;
-end
-
-# Gallery-dl
-function gdl --wraps='gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl'
-    gallery-dl --cookies-from-browser vivaldi $argv;
-end
-
-# Gallery-dl
-function gdlb --wraps='gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch'
-    gallery-dl --cookies-from-browser vivaldi -i $argv;
-end
-
-function tgdl --wraps='torify gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl (Tor)'
-    torify gallery-dl --cookies-from-browser vivaldi $argv;
-end
-
-function tgdl --wraps='torify gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch (Tor)'
-    torify gallery-dl --cookies-from-browser vivaldi -i $argv;
-end
+### Gallery-dl
+# function gdl --wraps='gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl'
+#     gallery-dl --cookies-from-browser vivaldi $argv;
+# end
+# 
+# function gdlb --wraps='gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch'
+#     gallery-dl --cookies-from-browser vivaldi -i $argv;
+# end
+# 
+# function tgdl --wraps='torify gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl (Tor)'
+#     torify gallery-dl --cookies-from-browser vivaldi $argv;
+# end
+# 
+# function tgdlb --wraps='torify gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch (Tor)'
+#     torify gallery-dl --cookies-from-browser vivaldi -i $argv;
+# end
 
 ### CPU Scaling governors for realtime audio
 ### https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
