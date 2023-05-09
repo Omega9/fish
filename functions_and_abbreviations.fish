@@ -239,7 +239,7 @@ function mkcd --description "Create and cd to directory"
 end
 
 function copypath --description "Copy full file path"
-    readlink -e $argv | xclip -sel clip
+    readlink -e . | xclip -sel clip
     echo "copied to clipboard"
 end
 

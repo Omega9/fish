@@ -5,6 +5,7 @@ function __to_usage
   echo ' to add [BOOKMARK] [DEST]  Create a BOOKMARK for DEST'
   echo '                             Default BOOKMARK: name of current directory'
   echo '                             Default DEST: path to current directory'
+  echo ' to add DEST               Create a bookmark for DEST if it is a directory'
   echo ' to ls                     List all bookmarks'
   echo ' to mv OLD NEW             Change the name of a bookmark from OLD to NEW'
   echo ' to rm BOOKMARK            Remove BOOKMARK'
@@ -17,12 +18,36 @@ function __to_usage
   return 1
 end
 
+# https://github.com/fish-shell/fish-shell/issues/6173#issuecomment-1067114363
+function is_empty_dir
+    test -d "$argv"
+    or return 1 # not a directory, so not an empty directory
+    # count counts how many arguments it received
+    # if this glob doesn't match, it won't get arguments
+    # and so it will return 1
+    # because we *want* an empty directory, turn that around.
+    # the `{.*,*}` ensures it matches hidden files as well.
+    not count $argv/{.*,*} >/dev/null
+end
+
 function __to_dir
-  if test -z "$TO_DIR"
-    echo ~/.tofish
-  else
+  if test -n "$TO_DIR"
     echo $TO_DIR
+    return
   end
+
+  set -l dir
+
+  if test -d "$HOME/.tofish" && not is_empty_dir $HOME/.tofish
+    set dir $HOME/.tofish
+  else if test -n "$XDG_DATA_HOME"
+    set dir $XDG_DATA_HOME/to-fish
+  else
+    set dir $HOME/.local/share/to-fish
+  end
+
+  set -U TO_DIR $dir
+  echo $TO_DIR
 end
 
 function __to_bm_path
@@ -30,37 +55,88 @@ function __to_bm_path
 end
 
 function __to_resolve
-  readlink (__to_bm_path $argv)
-  return $status
+  readlink (__to_bm_path $argv) 2>/dev/null
 end
 
 function __to_print
-  __to_resolve $argv | string replace -r "^$HOME" "~" | string replace -r '^~$' "$HOME"
+  __to_resolve $argv | string replace -r "^$HOME" "~" | string replace -r '^~$' $HOME
 end
 
 function __to_ls
-  set -l dir (__to_dir)
-  if test -d "$dir"
-    for bm in $dir/.* $dir/*
-      basename $bm
-    end
+  for l in (__to_dir)/*
+    basename $l
   end
 end
 
 function __to_rm
-  rm (__to_bm_path $argv[1]); or return $status
+  command rm -v (__to_bm_path $argv[1]); or return $status
+  __to_update_bookmark_completions
+end
+
+function __to_add -a bm dest
+  # if there are no arguments
+  if test -z "$bm"
+    # use the current directory
+    set dest (pwd)
+    set bm (basename $dest)
+  else
+    # if there are two arguments
+    if test -n "$dest"
+      # use them as bookmark name and destination
+      set dest (realpath $dest)
+
+    # if there is only one argument
+    else
+
+      # if the argument is a directory
+      if string match -q '*/*' $bm && test -d "$bm"
+        # use it as the destination
+        set dest (realpath $bm)
+        set bm (basename $dest)
+      else
+        # if not a directory
+        # use it as the bookmark name
+        set dest (pwd)
+      end
+    end
+  end
+
+  if __to_resolve $bm > /dev/null
+    echo "ERROR: Bookmark exists: $bm -> "(__to_print $bm) >&2
+    return 1
+  end
+
+  if not test -d "$dest"
+    echo "ERROR: Destination does not exist: $dest" >&2
+    return 1
+  end
+
+  if string match -q '*/*' $bm
+    echo "ERROR: Bookmark name cannot contain '/': $bm" >&2
+    return 1
+  end
+
+  switch (uname)
+    case Darwin
+      command ln -s $dest (__to_bm_path $bm); or return $status
+    case '*'
+      command ln -sT $dest (__to_bm_path $bm); or return $status
+  end
+
+  echo $bm "->" (__to_print $bm)
+
   __to_update_bookmark_completions
 end
 
 function __to_complete_directories
   set -l cl (commandline -ct | string split -m 1 /)
   set -l bm $cl[1]
-  set -l bmdir (__to_resolve $bm 2>/dev/null)
-  if test -z $bmdir
+  set -l bmdir (__to_resolve $bm)
+  if test -z "$bmdir"
     __fish_complete_directories
   else
     set -e cl[1]
-    if test -z $cl
+    if test -z "$cl"
       __fish_complete_directories $bmdir/ | string replace -r 'Directory$' $bm
     else
       __fish_complete_directories $bmdir/$cl | string replace -r 'Directory$' $bm
@@ -95,7 +171,7 @@ function to -d 'Bookmarking tool'
 
   # Create tofish directory
   if not test -d "$dir"
-    if mkdir "$dir"
+    if command mkdir $dir
       echo "Created bookmark directory: $dir"
     else
       echo "Failed to Create bookmark directory: $dir"
@@ -125,6 +201,7 @@ function to -d 'Bookmarking tool'
     case add
       if not test $numargs -ge 1 -a $numargs -le 3
         echo 'Usage: to add [BOOKMARK] [DEST]'
+        echo '       to add DEST'
         return 1
       end
 
@@ -139,35 +216,8 @@ function to -d 'Bookmarking tool'
   switch $cmd
     # Add a bookmark
     case add
-      set -l bm
-      set -l dest
-      if test -z "$argv[3]"
-        set dest (pwd)
-      else
-        set dest "$argv[3]"
-      end
-
-      if test -z "$argv[2]"
-        set bm (basename "$dest")
-      else
-        set bm "$argv[2]"
-      end
-
-      if test -z (__to_resolve $bm)
-        switch (uname)
-          case Darwin
-            ln -s "$dest" (__to_bm_path $bm); or return $status
-          case '*'
-            ln -sT "$dest" (__to_bm_path $bm); or return $status
-          end
-        echo $bm "->" (__to_print $bm)
-      else
-        echo ERROR: Bookmark exists: $bm '->' (__to_resolve $bm)
-        return 1
-      end
-
-      __to_update_bookmark_completions
-      return 0
+      __to_add $argv[2..-1]
+      return $status
 
     # Remove a bookmark
     case rm
@@ -184,25 +234,22 @@ function to -d 'Bookmarking tool'
     # Rename a bookmark
     case mv
       set -l old $argv[2]
-      set -l new $argv[3]
-      if not string length -q (__to_resolve $old)
+      if not __to_resolve $old > /dev/null
         echo "ERROR: Bookmark not found: $old"
-        return 1
-      else if string length -q (__to_resolve $new)
-        echo "ERROR: Bookmark already exists: $new"
         return 1
       end
 
-      mv -n (__to_bm_path $old) (__to_bm_path $new); or return $status
-      __to_update_bookmark_completions
+      set -l new $argv[3]
+      __to_add $new (__to_resolve $old); or return $status
+      __to_rm $old; or return $status
+
       return 0
 
     # Clean
     case clean
       for bm in (__to_ls)
-        set -l dest (__to_expand $bm)
-        if not test -d "$dest"
-          rm -v (__to_bm_path $bm)
+        if not test -d (__to_resolve $bm)
+          __to_rm $bm
         end
       end
       return 0
@@ -226,7 +273,7 @@ function to -d 'Bookmarking tool'
       end
 
       set -l dest (__to_resolve $name)
-      if test -z $dest
+      if test -z "$dest"
         if test -d "$name"
           echo "cd \"$name\"" | source -
         else
