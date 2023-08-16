@@ -31,6 +31,9 @@
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [done](https://github.com/franciscolourenco/done)
 - [extract](https://github.com/oh-my-fish/plugin-extract)
+- [fish-bd](https://github.com/0rax/fish-bd)
+- [fish-async-prompt](https://github.com/acomagu/fish-async-prompt)
+- [Sponge](https://github.com/meaningful-ooo/sponge)
 
 `/functions` содержит fisher и все установленные с его помощью функции.
 
