@@ -45,7 +45,8 @@
 3. `fisher update` для обновления функций
 
 ## Зависимости и рекомендации
-- Xclip для `pbcopy`/`pbpaste`
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) для `pbcopy`/`pbpaste` на Wayland *(по умолчанию)*
+- Xclip для `pbcopy`/`pbpaste` на Xorg
 - notify-send для `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
 - [Exa](https://the.exa.website/) для `ls` и `tree`

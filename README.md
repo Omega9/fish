@@ -45,7 +45,8 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 3. `fisher update` to update functions
 
 ## Dependencies and recommendations
-- Xclip for `pbcopy`/`pbpaste`
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) for `pbcopy`/`pbpaste` on Wayland *(default)*
+- Xclip for `pbcopy`/`pbpaste` on Xorg
 - notify-send for `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
 - [Exa](https://the.exa.website/) for `ls` and `tree`

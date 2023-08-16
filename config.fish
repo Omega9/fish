@@ -20,10 +20,10 @@
 # Set PATH
 set -x GOROOT (go env GOROOT)
 set -x GOPATH $HOME/src/go
-set -x GOBIN $GOROOT/bin
-set -x GOTOOLS $GOROOT/pkg/tool/
+set -x GOBIN $GOPATH/bin
+set -x GOTOOLS $GOPATH/pkg/tool/
 set -x PNPM_HOME $HOME/.local/share/pnpm
-set -x PATH $PATH $HOME/Applications $HOME/.local/bin $GOROOT/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PNPM_HOME
+set -x PATH $PATH $HOME/Applications $HOME/.local/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PNPM_HOME
 
 ## Audio plugins
 set -x VST_PATH /usr/lib/vst /usr/local/lib/vst $HOME/.vst
@@ -36,8 +36,16 @@ set -x CLAP_PATH /usr/lib/clap/ /usr/local/lib/clap $HOME/.clap
 
 # Export
 set -gx EDITOR micro
+set -gx VISUAL code
 set -gx BROWSER vivaldi-stable
 set --export GIT_EDITOR micro
+set --export QT_QPA_PLATFORMTHEME qt6ct
+set --export XDG_CURRENT_DESKTOP kde
+set --export KDE_FULL_SESSION true
+set --export XCURSOR_SIZE 24
+set --export XCURSOR_THEME Dot-Light
+set --export GTK_THEME Nordic
+set --export GTK_USE_PORTAL 1
 
 # Bookmarks directory for to-fish
 # set -U TO_DIR $HOME/.tofish
@@ -47,7 +55,7 @@ set -g theme_powerline_fonts yes
 set -g theme_color_scheme nord
 
 # Another Nord theme for fish
-# source "$HOME/.config/fish/nord.fish"
+# source "$HOME/.config/fish/themes/nord.fish"
 
 # Nord color theme for fzf
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'

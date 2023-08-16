@@ -328,13 +328,22 @@ function launch --description "Launch program"
     eval "$argv >/dev/null 2>&1 &" & disown
 end
 
-## Copypaste
+## Copypaste - Xorg
+# function pbcopy --description "Copy data from STDIN to the clipboard"
+#     xclip -selection clipboard
+# end
+
+# function pbpaste  --description "Paste data from the Clipboard"
+#     xclip -selection clipboard -o
+# end
+
+## Copypaste - Wayland
 function pbcopy --description "Copy data from STDIN to the clipboard"
-    xclip -selection clipboard
+    wl-copy $argv
 end
 
 function pbpaste  --description "Paste data from the Clipboard"
-    xclip -selection clipboard -o
+    wl-paste
 end
 
 # Generate password
@@ -431,40 +440,6 @@ end
 function showgit --description "Show git origin"
     open (git remote get-url origin)
 end
-
-### Yt-dlp
-# function ydl --wraps='yt-dlp --cookies-from-browser vivaldi' --description 'Yt-dlp'
-#     yt-dlp --cookies-from-browser vivaldi $argv;
-# end
-# 
-# function ydlb --wraps='yt-dlp --cookies-from-browser vivaldi -a' --description 'Yt-dlp batch'
-#     yt-dlp --cookies-from-browser vivaldi -a $argv;
-# end
-# 
-# function tydl --wraps='torify yt-dlp --cookies-from-browser vivaldi' --description 'Yt-dlp (Tor)'
-#     torify yt-dlp --cookies-from-browser vivaldi $argv;
-# end
-# 
-# function tydlb --wraps='torify yt-dlp --cookies-from-browser vivaldi -a' --description 'Yt-dlp batch (Tor)'
-#     torify yt-dlp --cookies-from-browser vivaldi -a $argv;
-# end
-
-### Gallery-dl
-# function gdl --wraps='gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl'
-#     gallery-dl --cookies-from-browser vivaldi $argv;
-# end
-# 
-# function gdlb --wraps='gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch'
-#     gallery-dl --cookies-from-browser vivaldi -i $argv;
-# end
-# 
-# function tgdl --wraps='torify gallery-dl --cookies-from-browser vivaldi' --description 'Gallery-dl (Tor)'
-#     torify gallery-dl --cookies-from-browser vivaldi $argv;
-# end
-# 
-# function tgdlb --wraps='torify gallery-dl --cookies-from-browser vivaldi -i' --description 'Gallery-dl batch (Tor)'
-#     torify gallery-dl --cookies-from-browser vivaldi -i $argv;
-# end
 
 ### CPU Scaling governors for realtime audio
 ### https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
