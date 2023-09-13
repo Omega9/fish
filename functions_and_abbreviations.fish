@@ -22,7 +22,7 @@ abbr tyta-vorbis 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio -
 abbr tyta-wav 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format wav'
 abbr tytv-best 'torify yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
 
-# Yt-dlp 
+# Yt-dlp
 abbr ydl 'yt-dlp --cookies-from-browser vivaldi'
 abbr ydlb 'yt-dlp --cookies-from-browser vivaldi -a'
 abbr tydl 'torify yt-dlp --cookies-from-browser vivaldi'
@@ -197,7 +197,7 @@ end
 
 # "command not found"
 function fish_command_not_found
-      __fish_default_command_not_found_handler $argv[1]
+    __fish_default_command_not_found_handler $argv[1]
 end
 
 # Bash
@@ -243,18 +243,18 @@ function copypath --description "Copy full file path"
     echo "copied to clipboard"
 end
 
-# Exa
-function ls --wraps='exa --long --header --classify --icons' --description 'ls'
-    exa --long --header --classify --icons $argv;
+# Eza
+function ls --wraps='eza --long --header --classify --icons' --description 'ls'
+    eza --long --header --classify --icons $argv;
 end
 
-function tree --wraps='exa --tree --level=2 --long --header --classify --icons' --description 'Tree'
-    exa --tree --level=2 --long --header --classify --icons $argv;
+function tree --wraps='eza --tree --level=2 --long --header --classify --icons' --description 'Tree'
+    eza --tree --level=2 --long --header --classify --icons $argv;
 end
 
 # fd
 function find --description 'Find with fd'
-   command fd -H $argv;
+    command fd -H $argv;
 end
 
 # grep
@@ -264,7 +264,7 @@ end
 
 # ripgrep
 function grep --description 'Color grep'
-   command rg --color=auto $argv;
+    command rg --color=auto $argv;
 end
 
 function du --description 'Count space'
@@ -329,22 +329,22 @@ function launch --description "Launch program"
 end
 
 ## Copypaste - Xorg
-# function pbcopy --description "Copy data from STDIN to the clipboard"
-#     xclip -selection clipboard
-# end
-
-# function pbpaste  --description "Paste data from the Clipboard"
-#     xclip -selection clipboard -o
-# end
-
-## Copypaste - Wayland
 function pbcopy --description "Copy data from STDIN to the clipboard"
-    wl-copy $argv
+    xclip -selection clipboard
 end
 
 function pbpaste  --description "Paste data from the Clipboard"
-    wl-paste
+    xclip -selection clipboard -o
 end
+
+## Copypaste - Wayland
+# function pbcopy --description "Copy data from STDIN to the clipboard"
+#    wl-copy $argv
+# end
+
+# function pbpaste  --description "Paste data from the Clipboard"
+#    wl-paste
+# end
 
 # Generate password
 function generate_password

@@ -38,14 +38,18 @@ set -x CLAP_PATH /usr/lib/clap/ /usr/local/lib/clap $HOME/.clap
 set -gx EDITOR micro
 set -gx VISUAL code
 set -gx BROWSER vivaldi-stable
+set --export CHROME_EXECUTABLE vivaldi-stable
 set --export GIT_EDITOR micro
 set --export QT_QPA_PLATFORMTHEME qt6ct
+set --export QT_STYLE_OVERRIDE kvantum-dark
 set --export XDG_CURRENT_DESKTOP kde
 set --export KDE_FULL_SESSION true
 set --export XCURSOR_SIZE 24
-set --export XCURSOR_THEME Dot-Light
-set --export GTK_THEME Nordic
+set --export XCURSOR_THEME "Dot-Light"
+set --export GTK_THEME "Nordic"
 set --export GTK_USE_PORTAL 1
+set --export SSH_ASKPASS '/usr/bin/ksshaskpass'
+set --export SSH_ASKPASS_REQUIRE prefer
 
 # Bookmarks directory for to-fish
 # set -U TO_DIR $HOME/.tofish

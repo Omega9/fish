@@ -52,7 +52,7 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 - Xclip for `pbcopy`/`pbpaste` on Xorg
 - notify-send for `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
-- [Exa](https://the.exa.website/) for `ls` and `tree`
+- [Eza](https://github.com/eza-community/eza) for `ls` and `tree`
 - [Bat](https://github.com/sharkdp/bat) for `cat`
 - [Delta](https://github.com/dandavison/delta) for `diff`
 - [fd](https://github.com/sharkdp/fd) for `find`

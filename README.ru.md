@@ -52,7 +52,7 @@
 - Xclip для `pbcopy`/`pbpaste` на Xorg
 - notify-send для `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
-- [Exa](https://the.exa.website/) для `ls` и `tree`
+- [Eza](https://github.com/eza-community/eza) для `ls` и `tree`
 - [Bat](https://github.com/sharkdp/bat) для `cat`
 - [Delta](https://github.com/dandavison/delta) для `diff`
 - [fd](https://github.com/sharkdp/fd) для `find`
