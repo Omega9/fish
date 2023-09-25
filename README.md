@@ -48,11 +48,11 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 3. `fisher update` to update functions
 
 ## Dependencies and recommendations
-- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) for `pbcopy`/`pbpaste` on Wayland *(default)*
-- Xclip for `pbcopy`/`pbpaste` on Xorg
+- Xclip for `pbcopy`/`pbpaste` on Xorg *(default)*
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) for `pbcopy`/`pbpaste` on Wayland
 - notify-send for `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
-- [Eza](https://github.com/eza-community/eza) for `ls` and `tree`
+- [Eza](https://eza.rocks) for `ls` and `tree`
 - [Bat](https://github.com/sharkdp/bat) for `cat`
 - [Delta](https://github.com/dandavison/delta) for `diff`
 - [fd](https://github.com/sharkdp/fd) for `find`

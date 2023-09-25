@@ -48,11 +48,11 @@
 3. `fisher update` для обновления функций
 
 ## Зависимости и рекомендации
+- Xclip для `pbcopy`/`pbpaste` на Xorg *(по умолчанию)*
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) для `pbcopy`/`pbpaste` на Wayland *(по умолчанию)*
-- Xclip для `pbcopy`/`pbpaste` на Xorg
 - notify-send для `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
-- [Eza](https://github.com/eza-community/eza) для `ls` и `tree`
+- [Eza](https://eza.rocks) для `ls` и `tree`
 - [Bat](https://github.com/sharkdp/bat) для `cat`
 - [Delta](https://github.com/dandavison/delta) для `diff`
 - [fd](https://github.com/sharkdp/fd) для `find`
