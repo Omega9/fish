@@ -1,81 +1,74 @@
-### Abbreviations
-
-# Yt-dlp extract
-abbr yta-aac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'
-abbr yta-best 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format best'
-abbr yta-flac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format flac'
-abbr yta-m4a 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format m4a'
-abbr yta-mp3 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format mp3'
-abbr yta-opus 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format opus'
-abbr yta-vorbis 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format vorbis'
-abbr yta-wav 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format wav'
-abbr ytv-best 'yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
-
-# Torified Yt-dlp extract
-abbr tyta-aac 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'
-abbr tyta-best 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format best'
-abbr tyta-flac 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format flac'
-abbr tyta-m4a 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format m4a'
-abbr tyta-mp3 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format mp3'
-abbr tyta-opus 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format opus'
-abbr tyta-vorbis 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format vorbis'
-abbr tyta-wav 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format wav'
-abbr tytv-best 'torify yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
-
-# Yt-dlp
-abbr ydl 'yt-dlp --cookies-from-browser vivaldi'
-abbr ydlb 'yt-dlp --cookies-from-browser vivaldi -a'
-abbr tydl 'torify yt-dlp --cookies-from-browser vivaldi'
-abbr tydlb 'torify yt-dlp --cookies-from-browser vivaldi -a'
-
-# Gallery-dl
-abbr gdl 'gallery-dl --cookies-from-browser vivaldi'
-abbr gdlb 'gallery-dl --cookies-from-browser vivaldi -i'
-abbr tgdl 'torify gallery-dl --cookies-from-browser vivaldi'
-abbr tgdlb 'torify gallery-dl --cookies-from-browser vivaldi -i'
-
 ### Functions
+
+# Terminal Shortcuts
+# https://itsfoss.com/linux-terminal-shortcuts/
+function t-h --description 'Terminal Shortcuts'
+    echo -n "Terminal Shortcuts
+    ‣ Ctrl + A	        Move to the start of the line.
+    ‣ Ctrl + E	        Move to the end of the line.
+    ‣ Ctrl + U	        Delete from the cursor to the start of the line.
+    ‣ Ctrl + K	        Delete from the cursor to the end of the line.
+    ‣ Ctrl + W	        Delete the word before the cursor.
+    ‣ Ctrl + L	        Clear the terminal screen.
+    ‣ Ctrl + C	        Stop the current process/command.
+    ‣ Ctrl + D	        Log out or exit the terminal.
+    ‣ Ctrl + Z          Pause the current process (can be resumed).
+    ‣ Ctrl + R          Search command history (backward search).
+    ‣ Up Arrow          Show the previous command (from the command history).
+    ‣ Down Arrow        Show the next command (from the command history).
+    ‣ !!                Repeat the last command.
+    ‣ !n                Repeat the nth command from history.
+    ‣ Tab               Auto-complete commands, files, or directories.
+    ‣ Tab twice         List all possible completions.
+    ‣ Ctrl + Shift + C  Copy the selected text or command.
+    ‣ Ctrl + Shift + V  Paste copied text or command.
+    ‣ Ctrl + Shift + N  Open a new terminal window.
+    ‣ Ctrl + Shift + T  Open a new tab in the terminal.
+    ‣ Ctrl + Tab        Switch between terminal tabs.
+    ‣ Ctrl + PageDown   Switch between terminal tabs.
+    " | lolcat
+end
 
 # Pacman & Aura help
 function p-h --description 'Pacman functions'
     echo -n "Pacman functions
-    ‣ p-i - Install
-    ‣ p-u - Update
-    ‣ p-s - Search
-    ‣ p-rdd - Remove package without dependencies
-    ‣ p-r - Remove
-    ‣ p-p - Purge (rm pkgs no longer included in any repos)
-    ‣ p-ac - Autoclean (clean up all local caches)
-    ‣ p-ai - Info
-    ‣ p-ar - Autoremove (rm deps no longer needed)
-    ‣ p-c - Clean
-    ‣ p-unlock - Unlock Pacman
-    "
+    ‣ p-i       Install
+    ‣ p-u       Update
+    ‣ p-s       Search
+    ‣ p-rdd     Remove package without dependencies
+    ‣ p-r       Remove
+    ‣ p-p       Purge (rm pkgs no longer included in any repos)
+    ‣ p-ac      Autoclean (clean up all local caches)
+    ‣ p-ai      Info
+    ‣ p-ar      Autoremove (rm deps no longer needed)
+    ‣ p-c       Clean
+    ‣ p-unlock  Unlock Pacman
+    " | lolcat
 end
 
 function a-h --description 'Aura functions'
     echo -n "Aura functions
-    ‣ a-b - Store a JSON record of all installed packages
-    ‣ a-br - Restore a saved record. Rolls back and uninstalls as necessary
-    ‣ a-bc - Delete all but the most recent n saved states
-    ‣ a-bl - Show all saved package state filenames
+    ‣ a-b   Store a JSON record of all installed packages
+    ‣ a-br  Restore a saved record. Rolls back and uninstalls as necessary
+    ‣ a-bc  Delete all but the most recent n saved states
+    ‣ a-bl  Show all saved package state filenames
 
-    ‣ a-c - Downgrade a package
-    ‣ a-cs - Search the cache for files that match a regex
-    ‣ a-cc - Delete all but recent n versions of each cached package
-    ‣ a-cv - Delete cache
+    ‣ a-c   Downgrade a package
+    ‣ a-cs  Search the cache for files that match a regex
+    ‣ a-cc  Delete all but recent n versions of each cached package
+    ‣ a-cv  Delete cache
 
-    ‣ a-o - Display orphan packages
-    ‣ a-oa - Change install reason to Explicitly installed
-    ‣ a-oj - Uninstall all orphan packages
+    ‣ a-o   Display orphan packages
+    ‣ a-oa  Change install reason to Explicitly installed
+    ‣ a-oj  Uninstall all orphan packages
 
-    ‣ a-i - Install
-    ‣ a-u - Upgrade
-    ‣ a-ai - Info
-    ‣ a-s - Search
-    ‣ a-pb - Display PKGBUILD
-    ‣ a-d - List dependencies
-    "
+    ‣ a-i   Install
+    ‣ a-u   Upgrade
+    ‣ a-ai  Info
+    ‣ a-s   Search
+    ‣ a-pb  Display PKGBUILD
+    ‣ a-d   List dependencies
+    " | lolcat
 end
 
 # Pacman
@@ -238,10 +231,17 @@ function mkcd --description "Create and cd to directory"
     and cd $argv
 end
 
+# Copy full file path  - Xorg
 function copypath --description "Copy full file path"
     readlink -e . | xclip -sel clip
     echo "copied to clipboard"
 end
+
+# Copy full file path  - Wayland
+# function copypath --description "Copy full file path"
+#    readlink -e . | wl-copy
+#    echo "copied to clipboard"
+# end
 
 # Eza
 function ls --wraps='eza --long --header --classify --icons' --description 'ls'
@@ -250,6 +250,12 @@ end
 
 function tree --wraps='eza --tree --level=2 --long --header --classify --icons' --description 'Tree'
     eza --tree --level=2 --long --header --classify --icons $argv;
+end
+
+# Tere
+function tere
+    set --local result (command tere $argv)
+    [ -n "$result" ] && cd -- "$result"
 end
 
 # fd
@@ -383,7 +389,7 @@ end
 #    tar -zxvf  $argv;
 # end
 
-### NET
+# NET
 function myip --description 'What is my IP?'
     curl ifconfig.co
 end
@@ -430,7 +436,7 @@ function weather --description "Show weather"
 end
 
 function погода --description "Погода в Уфе"
-    curl wttr.in/Ufa
+    curl wttr.in/Ufa+Russia
 end
 
 function transfer --description "Upload file to transfer.sh"
@@ -441,8 +447,8 @@ function showgit --description "Show git origin"
     open (git remote get-url origin)
 end
 
-### CPU Scaling governors for realtime audio
-### https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
+# CPU Scaling governors for realtime audio
+# https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
 function cpugov-performance --wraps='sudo cpupower frequency-set -g performance' --description 'Run the CPU at the maximum frequency'
     sudo cpupower frequency-set -g performance
 end
@@ -455,13 +461,19 @@ function cpugov-schedutil --wraps='sudo cpupower frequency-set -g schedutil' --d
     sudo cpupower frequency-set -g schedutil
 end
 
-### The most needed function
-function rickroll --description 'the terminal rickroll'
-    curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
+# FFmpeg
+function ffc --description 'Convert anything with FFmpeg'
+    ffmpeg -i $argv[1] -y $argv[1].$argv[2]
 end
 
-### ascii-image-converter
-### https://github.com/TheZoraiz/ascii-image-converter
+# ImageMagick
+function imc --description 'Convert anything with ImageMagick'
+    # magick $argv[1] $argv[1].$argv[2]
+    convert $argv[1] $argv[1].$argv[2]
+end
+
+# Ascii-image-converter
+# https://github.com/TheZoraiz/ascii-image-converter
 function image-to-ascii --description 'Convert image to ASCII-art'
     ascii-image-converter $argv  -f -C -s .
 end
@@ -469,3 +481,44 @@ end
 function image-to-braille --description 'Convert image to Braille-art'
     ascii-image-converter $argv  -f -C -b -s .
 end
+
+# The most needed function
+function rickroll --description 'the terminal rickroll'
+    curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
+end
+
+### Abbreviations
+
+# Yt-dlp extract
+abbr yta-aac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'
+abbr yta-best 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format best'
+abbr yta-flac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format flac'
+abbr yta-m4a 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format m4a'
+abbr yta-mp3 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format mp3'
+abbr yta-opus 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format opus'
+abbr yta-vorbis 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format vorbis'
+abbr yta-wav 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format wav'
+abbr ytv-best 'yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
+
+# Torified Yt-dlp extract
+abbr tyta-aac 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'
+abbr tyta-best 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format best'
+abbr tyta-flac 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format flac'
+abbr tyta-m4a 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format m4a'
+abbr tyta-mp3 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format mp3'
+abbr tyta-opus 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format opus'
+abbr tyta-vorbis 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format vorbis'
+abbr tyta-wav 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format wav'
+abbr tytv-best 'torify yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
+
+# Yt-dlp
+abbr ydl 'yt-dlp --cookies-from-browser vivaldi'
+abbr ydlb 'yt-dlp --cookies-from-browser vivaldi -a'
+abbr tydl 'torify yt-dlp --cookies-from-browser vivaldi'
+abbr tydlb 'torify yt-dlp --cookies-from-browser vivaldi -a'
+
+# Gallery-dl
+abbr gdl 'gallery-dl --cookies-from-browser vivaldi'
+abbr gdlb 'gallery-dl --cookies-from-browser vivaldi -i'
+abbr tgdl 'torify gallery-dl --cookies-from-browser vivaldi'
+abbr tgdlb 'torify gallery-dl --cookies-from-browser vivaldi -i'

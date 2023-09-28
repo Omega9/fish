@@ -26,7 +26,7 @@ This configuration has [fisher](https://github.com/jorgebucaran/fisher) installe
 - [bobthefish](https://github.com/oh-my-fish/theme-bobthefish)
 - [fzf](https://github.com/jethrokuan/fzf)
 - [Foreign Environment](https://github.com/oh-my-fish/plugin-foreign-env)
-- [replay.fish](https://github.com/jorgebucaran/fish-bax)
+- [replay.fish](https://github.com/jorgebucaran/replay.fish)
 - [to-fish](https://github.com/joehillen/to-fish)
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [done](https://github.com/franciscolourenco/done)
@@ -34,11 +34,17 @@ This configuration has [fisher](https://github.com/jorgebucaran/fisher) installe
 - [fish-bd](https://github.com/0rax/fish-bd)
 - [fish-async-prompt](https://github.com/acomagu/fish-async-prompt)
 - [Sponge](https://github.com/meaningful-ooo/sponge)
+- [up](https://github.com/shannonmoeller/up)
 
 `/functions` contains fisher and all functions installed with it.
 
 All functions and abbreviations I added are contained in `functions_and_abbreviations.fish`
 Some part I carried over from my zsh configuration. Some of them were added by me, others may have come across to you before on the Github.
+
+Quick reference:
+- `t-h` for terminal shortcuts
+- `p-h` for Pacman commands
+- `a-h` for Aura commands
 
 [![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
 
@@ -54,6 +60,7 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
 - [Eza](https://eza.rocks) for `ls` and `tree`
 - [Bat](https://github.com/sharkdp/bat) for `cat`
+- [Tere](https://github.com/mgunyho/tere) - a faster alternative to `cd + ls`
 - [Delta](https://github.com/dandavison/delta) for `diff`
 - [fd](https://github.com/sharkdp/fd) for `find`
 - [ripgrep](https://github.com/BurntSushi/ripgrep) for `grep`
@@ -64,10 +71,13 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 - [Gist](https://github.com/defunkt/gist)
 - [fzf](https://github.com/junegunn/fzf)
 - [Micro editor](https://micro-editor.github.io/)
+- [FFmpeg](https://ffmpeg.org) for `ffc`
+- [ImageMagick](https://imagemagick.org) for `imc`
 - *(optional)* `kioclient5` and `ktrash5` from KDE for trash bin
 - *(optional)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
 - *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) for `fish_greeting`
 - *(optional)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) or [Ponysay](https://erkin.party/ponysay/) for `fish_greeting`
+- *(optional)* [Lolcat](https://github.com/busyloop/lolcat) for colorful help messages
 
 * * *
 ## Other

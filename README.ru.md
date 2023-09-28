@@ -26,7 +26,7 @@
 - [bobthefish](https://github.com/oh-my-fish/theme-bobthefish)
 - [fzf](https://github.com/jethrokuan/fzf)
 - [Foreign Environment](https://github.com/oh-my-fish/plugin-foreign-env)
-- [replay.fish](https://github.com/jorgebucaran/fish-bax)
+- [replay.fish](https://github.com/jorgebucaran/replay.fish)
 - [to-fish](https://github.com/joehillen/to-fish)
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [done](https://github.com/franciscolourenco/done)
@@ -34,11 +34,17 @@
 - [fish-bd](https://github.com/0rax/fish-bd)
 - [fish-async-prompt](https://github.com/acomagu/fish-async-prompt)
 - [Sponge](https://github.com/meaningful-ooo/sponge)
+- [up](https://github.com/shannonmoeller/up)
 
 `/functions` содержит fisher и все установленные с его помощью функции.
 
 Все функции и аббревиатуры, добавленные мною, содержатся в `functions_and_abbreviations.fish`
 Некоторую часть я перенёс из своей конфигурации zsh. Часть из них добавлена мною, другие могли попадаться вам прежде на просторах Github.
+
+Быстрая справка:
+- `t-h` для шорткатов терминала
+- `p-h` для команд Pacman
+- `a-h` для команд Aura
 
 [![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
 
@@ -54,6 +60,7 @@
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
 - [Eza](https://eza.rocks) для `ls` и `tree`
 - [Bat](https://github.com/sharkdp/bat) для `cat`
+- [Tere](https://github.com/mgunyho/tere) - быстрая альтернатива `cd + ls`
 - [Delta](https://github.com/dandavison/delta) для `diff`
 - [fd](https://github.com/sharkdp/fd) для `find`
 - [ripgrep](https://github.com/BurntSushi/ripgrep) для `grep`
@@ -64,10 +71,13 @@
 - [Gist](https://github.com/defunkt/gist)
 - [fzf](https://github.com/junegunn/fzf)
 - [Micro editor](https://micro-editor.github.io/)
+- [FFmpeg](https://ffmpeg.org) для `ffc`
+- [ImageMagick](https://imagemagick.org) для `imc`
 - *(опционально)* `kioclient5` и `ktrash5` из KDE для корзины
 - *(опционально)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
 - *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) для `fish_greeting`
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
+- *(опционально)* [Lolcat](https://github.com/busyloop/lolcat) для цветастой помощи
 
 * * *
 ## Прочее
