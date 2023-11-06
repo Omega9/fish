@@ -75,7 +75,7 @@ Quick reference:
 - [ImageMagick](https://imagemagick.org) for `imc`
 - *(optional)* `kioclient5` and `ktrash5` from KDE for trash bin
 - *(optional)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
-- *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) for `fish_greeting`
+- *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) of [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) for `fish_greeting`
 - *(optional)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) or [Ponysay](https://erkin.party/ponysay/) for `fish_greeting`
 - *(optional)* [Lolcat](https://github.com/busyloop/lolcat) for colorful help messages
 

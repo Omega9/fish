@@ -75,7 +75,7 @@
 - [ImageMagick](https://imagemagick.org) для `imc`
 - *(опционально)* `kioclient5` и `ktrash5` из KDE для корзины
 - *(опционально)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
-- *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) для `fish_greeting`
+- *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) или [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) для `fish_greeting`
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
 - *(опционально)* [Lolcat](https://github.com/busyloop/lolcat) для цветастой помощи
 
