@@ -54,7 +54,7 @@ Quick reference:
 3. `fisher update` to update functions
 
 ## Dependencies and recommendations
-- Xclip for `pbcopy`/`pbpaste` on Xorg *(default)*
+- Xclip for `pbcopy`/`pbpaste` on Xorg
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) for `pbcopy`/`pbpaste` on Wayland
 - notify-send for `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
@@ -73,7 +73,7 @@ Quick reference:
 - [Micro editor](https://micro-editor.github.io/)
 - [FFmpeg](https://ffmpeg.org) for `ffc`
 - [ImageMagick](https://imagemagick.org) for `imc`
-- *(optional)* `kioclient5` and `ktrash5` from KDE for trash bin
+- *(optional)* `kioclient` and `ktrash6` from KDE for trash bin
 - *(optional)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
 - *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) of [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) for `fish_greeting`
 - *(optional)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) or [Ponysay](https://erkin.party/ponysay/) for `fish_greeting`

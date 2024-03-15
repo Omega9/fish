@@ -54,8 +54,8 @@
 3. `fisher update` для обновления функций
 
 ## Зависимости и рекомендации
-- Xclip для `pbcopy`/`pbpaste` на Xorg *(по умолчанию)*
-- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) для `pbcopy`/`pbpaste` на Wayland *(по умолчанию)*
+- Xclip для `pbcopy`/`pbpaste` на Xorg
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) для `pbcopy`/`pbpaste` на Wayland
 - notify-send для `done`
 - [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
 - [Eza](https://eza.rocks) для `ls` и `tree`
@@ -73,7 +73,7 @@
 - [Micro editor](https://micro-editor.github.io/)
 - [FFmpeg](https://ffmpeg.org) для `ffc`
 - [ImageMagick](https://imagemagick.org) для `imc`
-- *(опционально)* `kioclient5` и `ktrash5` из KDE для корзины
+- *(опционально)* `kioclient` и `ktrash6` из KDE для корзины
 - *(опционально)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
 - *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) или [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) для `fish_greeting`
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
