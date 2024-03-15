@@ -1,6 +1,6 @@
 # Meta-stuff
 complete -c eza -s v -l version -d "Show version of eza"
-complete -c eza -s '?' -l help -d "Show list of command-line options"
+complete -c eza -l help -d "Show list of command-line options"
 
 # Display options
 complete -c eza -s 1 -l oneline -d "Display one entry per line"
@@ -9,6 +9,7 @@ complete -c eza -s G -l grid -d "Display entries in a grid"
 complete -c eza -s x -l across -d "Sort the grid across, rather than downwards"
 complete -c eza -s R -l recurse -d "Recurse into directories"
 complete -c eza -s T -l tree -d "Recurse into directories as a tree"
+complete -c eza -s X -l dereference -d "Dereference symbolic links when displaying information"
 complete -c eza -s F -l classify -d "Display type indicator by file names"
 complete -c eza -l color \
     -l colour -d "When to use terminal colours" -x -a "
@@ -18,16 +19,32 @@ complete -c eza -l color \
     never\t'Never use colour'
 "
 complete -c eza -l color-scale \
-    -l colour-scale -d "Highlight levels of file sizes distinctly"
-complete -c eza -l icons -d "Display icons"
-complete -c eza -l no-icons -d "Don't display icons"
+    -l colour-scale -d "Highlight levels 'field' distinctly" -x -a "
+    all\t''
+    age\t''
+    size\t''
+"
+complete -c eza -l color-scale-mode \
+    -l colour-scale-mode \
+    -d "Use gradient or fixed colors in --color-scale" -x -a "
+    fixed\t'Highlight based on fixed colors'
+    gradient\t'Highlight based \'field\' in relation to other files'
+"
+complete -c eza -l icons -d "When to display icons" -x -a "
+  always\t'Always display icons'
+  auto\t'Display icons if standard output is a terminal'
+  automatic\t'Display icons if standard output is a terminal'
+  never\t'Never display icons'
+"
 complete -c eza -l no-quotes -d "Don't quote file names with spaces"
 complete -c eza -l hyperlink -d "Display entries as hyperlinks"
+complete -c eza -l smart-group -d "Only show group if it has a different name from owner"
 
 # Filtering and sorting options
 complete -c eza -l group-directories-first -d "Sort directories before other files"
 complete -c eza -l git-ignore -d "Ignore files mentioned in '.gitignore'"
 complete -c eza -s a -l all -d "Show hidden and 'dot' files. Use this twice to also show the '.' and '..' directories"
+complete -c eza -s A -l almost-all -d "Equivalent to --all; included for compatibility with `ls -A`"
 complete -c eza -s d -l list-dirs -d "List directories like regular files"
 complete -c eza -s L -l level -d "Limit the depth of recursion" -x -a "1 2 3 4 5 6 7 8 9"
 complete -c eza -s w -l width -d "Limits column output of grid, 0 implies auto-width"
@@ -86,13 +103,16 @@ complete -c eza -l time-style -d "How to format timestamps" -x -a "
     long-iso\t'Display longer ISO timestamps, up to the minute'
     full-iso\t'Display full ISO timestamps, up to the nanosecond'
     relative\t'Display relative timestamps'
+    +FORMAT\t'Use custom time style'
 "
+complete -c eza -l total-size -d "Show recursive directory size (unix only)"
 complete -c eza -l no-permissions -d "Suppress the permissions field"
 complete -c eza -s o -l octal-permissions -d "List each file's permission in octal format"
 complete -c eza -l no-filesize -d "Suppress the filesize field"
 complete -c eza -l no-user -d "Suppress the user field"
 complete -c eza -l no-time -d "Suppress the time field"
 complete -c eza -s M -l mounts -d "Show mount details"
+complete -c eza -l stdin -d "When piping to eza. Read file names from stdin"
 
 # Optional extras
 complete -c eza -l git -d "List each file's Git status, if tracked"

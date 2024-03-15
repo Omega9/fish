@@ -218,11 +218,11 @@ end
 
 # Trash bin
 function rmrf --description 'move to trash recursively'
-    kioclient5 mv (echo (readlink -e $argv)) trash:/
+    kioclient mv (echo (readlink -e $argv)) trash:/
 end
 
-function emptytrash --wraps='ktrash5 --empty' --description 'Empty trash bin'
-    ktrash5 --empty
+function emptytrash --wraps='ktrash6 --empty' --description 'Empty trash bin'
+    ktrash6 --empty
     and echo "Trash bin is empty"
 end
 
@@ -231,16 +231,28 @@ function mkcd --description "Create and cd to directory"
     and cd $argv
 end
 
-# Copy full file path  - Xorg
+# Copy full file path
 function copypath --description "Copy full file path"
-    readlink -e . | xclip -sel clip
-    echo "copied to clipboard"
+    switch (echo $XDG_SESSION_TYPE)
+        case x11
+            readlink -e . | xclip -sel clip
+            echo "copied to clipboard"
+        case wayland
+            readlink -e . | wl-copy
+            echo "copied to clipboard"
+    end
 end
 
-# Copy full file path  - Wayland
+## Copy full file path - Xorg
 # function copypath --description "Copy full file path"
-#    readlink -e . | wl-copy
-#    echo "copied to clipboard"
+#     readlink -e . | xclip -sel clip
+#     echo "copied to clipboard"
+# end
+
+## Copy full file path - Wayland
+# function copypath --description "Copy full file path"
+#     readlink -e . | wl-copy
+#     echo "copied to clipboard"
 # end
 
 # Eza
@@ -334,22 +346,41 @@ function launch --description "Launch program"
     eval "$argv >/dev/null 2>&1 &" & disown
 end
 
-## Copypaste - Xorg
+## Copypaste
 function pbcopy --description "Copy data from STDIN to the clipboard"
-    xclip -selection clipboard
+    switch (echo $XDG_SESSION_TYPE)
+        case x11
+            xclip -selection clipboard
+        case wayland
+            wl-copy $argv
+    end
 end
 
 function pbpaste  --description "Paste data from the Clipboard"
-    xclip -selection clipboard -o
+    switch (echo $XDG_SESSION_TYPE)
+        case x11
+            xclip -selection clipboard -o
+        case wayland
+            wl-paste
+    end
 end
 
-## Copypaste - Wayland
+## Copypaste - Xorg
 # function pbcopy --description "Copy data from STDIN to the clipboard"
-#    wl-copy $argv
+#     xclip -selection clipboard
 # end
 
 # function pbpaste  --description "Paste data from the Clipboard"
-#    wl-paste
+#     xclip -selection clipboard -o
+# end
+
+## Copypaste - Wayland
+# function pbcopy --description "Copy data from STDIN to the clipboard"
+#     wl-copy $argv
+# end
+
+# function pbpaste  --description "Paste data from the Clipboard"
+#     wl-paste
 # end
 
 # Generate password
