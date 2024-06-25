@@ -54,6 +54,7 @@
 3. `fisher update` для обновления функций
 
 ## Зависимости и рекомендации
+- [OpenDoas](https://wiki.archlinux.org/title/Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9))
 - Xclip для `pbcopy`/`pbpaste` на Xorg
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) для `pbcopy`/`pbpaste` на Wayland
 - notify-send для `done`
@@ -75,7 +76,7 @@
 - [ImageMagick](https://imagemagick.org) для `imc`
 - *(опционально)* `kioclient` и `ktrash6` из KDE для корзины
 - *(опционально)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
-- *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) или [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) для `fish_greeting`
+- *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar), [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) или [Oblique Strategies](https://github.com/nph278/oblique-strategies-cli) для `fish_greeting`
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
 - *(опционально)* [Lolcat](https://github.com/busyloop/lolcat) для цветастой помощи
 

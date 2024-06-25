@@ -54,6 +54,7 @@ Quick reference:
 3. `fisher update` to update functions
 
 ## Dependencies and recommendations
+- [OpenDoas](https://wiki.archlinux.org/title/Doas)
 - Xclip for `pbcopy`/`pbpaste` on Xorg
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) for `pbcopy`/`pbpaste` on Wayland
 - notify-send for `done`
@@ -75,7 +76,7 @@ Quick reference:
 - [ImageMagick](https://imagemagick.org) for `imc`
 - *(optional)* `kioclient` and `ktrash6` from KDE for trash bin
 - *(optional)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
-- *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar) of [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) for `fish_greeting`
+- *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar), [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) or [Oblique Strategies](https://github.com/nph278/oblique-strategies-cli) for `fish_greeting`
 - *(optional)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) or [Ponysay](https://erkin.party/ponysay/) for `fish_greeting`
 - *(optional)* [Lolcat](https://github.com/busyloop/lolcat) for colorful help messages
 

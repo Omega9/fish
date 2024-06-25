@@ -23,7 +23,7 @@ set -x GOPATH $HOME/src/go
 set -x GOBIN $GOPATH/bin
 set -x GOTOOLS $GOPATH/pkg/tool/
 set -x PNPM_HOME $HOME/.local/share/pnpm
-set -x PATH $PATH $HOME/Applications $HOME/.local/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PNPM_HOME
+set -x PATH $PATH $HOME/Applications $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PNPM_HOME
 
 ## Audio plugins
 set -x VST_PATH /usr/lib/vst /usr/local/lib/vst $HOME/.vst
@@ -46,10 +46,14 @@ set --export XDG_CURRENT_DESKTOP kde
 set --export KDE_FULL_SESSION true
 set --export XCURSOR_SIZE 24
 set --export XCURSOR_THEME "Dot-Light"
-set --export GTK_THEME "Nordic"
+# set --export GTK_THEME "Nordic"
+set --export GTK_THEME "Amy-Dark-GTK"
 set --export GTK_USE_PORTAL 1
 set --export SSH_ASKPASS '/usr/bin/ksshaskpass'
 set --export SSH_ASKPASS_REQUIRE prefer
+
+# Fix Flameshot on Wayland
+# set --export QT_SCREEN_SCALE_FACTORS "1;1"
 
 # Bookmarks directory for to-fish
 # set -U TO_DIR $HOME/.tofish
@@ -85,9 +89,11 @@ end
 function fish_greeting -d "Lasita-a diri saluton"
     set_color $fish_color_autosuggestion
     # echo "Я полностью работоспособен и все мои цепи функционируют идеально."
-    # ddate | pokemonsay -N
-    # ddate | ponysay -c
-    ifc | pokemonsay -N
-    # ifc | ponysay -c
+    # ddate | pokemonsay -N # Discordian date with Pokemonsay
+    # ddate | ponysay -c # Discordian date with Ponysay
+    # ifc | pokemonsay -N # International Fixed Calendar with Pokemonsay
+    # ifc | ponysay -c # International Fixed Calendar with Ponysay
+    oblique-strategies | pokemonsay -N # Oblique Strategies with Pokemonsay
+    # oblique-strategies | ponysay -c # Oblique Strategies with Ponysay
     set_color normal
 end

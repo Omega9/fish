@@ -71,6 +71,11 @@ function a-h --description 'Aura functions'
     " | lolcat
 end
 
+# Topgrade with less questions
+function tg --wraps='sudo pacman -S' --description 'Topgrade with less questions'
+    topgrade --disable node;
+end
+
 # Pacman
 function p-i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
     sudo pacman -S $argv;
@@ -201,6 +206,14 @@ end
 # Root privileges
 function doas --description 'doas'
     command doas -- $argv;
+end
+
+# function sudo --description 'sudo (doas)'
+#     command doas $argv;
+# end
+
+function sudoedit --description 'sudoedit (doas)'
+    command doas rnano $argv;
 end
 
 # Confirm before overwriting something
