@@ -84,3 +84,4 @@
 ## Прочее
 - [fish logo](https://github.com/fish-shell/fish-shell/issues/114)
 - [fish logo](https://github.com/laughedelic/fish_logo) для `fish_greeting`
+- [Версия для Haiku](https://github.com/Omega9/fish-for-haiku)

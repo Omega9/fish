@@ -84,3 +84,4 @@ Quick reference:
 ## Other
 - [fish logo](https://github.com/fish-shell/fish-shell/issues/114)
 - [fish logo](https://github.com/laughedelic/fish_logo) for `fish_greeting`
+- [This config for Haiku OS](https://github.com/Omega9/fish-for-haiku)
