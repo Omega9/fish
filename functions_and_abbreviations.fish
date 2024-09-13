@@ -76,45 +76,90 @@ function tg --wraps='sudo pacman -S' --description 'Topgrade with less questions
     topgrade --disable node;
 end
 
-# Pacman
-function p-i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
-    sudo pacman -S $argv;
+# Pacman (just pacman)
+# function p-i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
+#     sudo pacman -S $argv;
+# end
+
+# function p-u --wraps='sudo pacman -Syu' --description 'Update (pacman -Syu)'
+#     sudo pacman -Syu $argv;
+# end
+
+# function p-s --wraps='pacman -Ss' --description 'Search (pacman -Ss)'
+#     pacman -Ss $argv;
+# end
+
+# function p-rdd --wraps='sudo pacman -Rdd ' --description 'Remove package without dependencies (pacman -Rdd)'
+#     sudo pacman -Rdd $argv;
+# end
+
+# function p-r --wraps='sudo pacman -Rs' --description 'Remove (pacman -Rs)'
+#     sudo pacman -Rs $argv;
+# end
+
+# function p-p --wraps='sudo pacman -Qmq | pacman -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
+#     sudo pacman -Qmq | pacman -Rs - $argv;
+# end
+
+# function p-ac --wraps='sudo pacman -Sc' --description 'Autoclean (clean up all local caches)'
+#     sudo pacman -Sc $argv;
+# end
+
+# function p-ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
+#     pacman -Si $argv;
+# end
+
+# function p-ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
+#     sudo pacman -Qdtq | sudo pacman -Rs – $argv;
+# end
+
+# function p-c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
+#     sudo pacman -Scc $argv;
+# end
+
+# function p-unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
+#     sudo rm /var/lib/pacman/db.lck $argv;
+# end
+
+# Aura - Pacman commands)
+function p-i --wraps='doas aura -S' --description 'Install (aura -S)'
+    doas aura -S $argv;
 end
 
-function p-u --wraps='sudo pacman -Syu' --description 'Update (pacman -Syu)'
-    sudo pacman -Syu $argv;
+function p-u --wraps='doas aura -Syu' --description 'Update (aura -Syu)'
+    doas aura -Syu $argv;
 end
 
-function p-s --wraps='pacman -Ss' --description 'Search (pacman -Ss)'
-    pacman -Ss $argv;
+function p-s --wraps='aura -Ss' --description 'Search (aura -Ss)'
+    aura -Ss $argv;
 end
 
-function p-rdd --wraps='sudo pacman -Rdd ' --description 'Remove package without dependencies (pacman -Rdd)'
-    sudo pacman -Rdd $argv;
+function p-rdd --wraps='doas aura -Rdd ' --description 'Remove package without dependencies (aura -Rdd)'
+    doas aura -Rdd $argv;
 end
 
-function p-r --wraps='sudo pacman -Rs' --description 'Remove (pacman -Rs)'
-    sudo pacman -Rs $argv;
+function p-r --wraps='doas aura -Rs' --description 'Remove (aura -Rs)'
+    doas aura -Rs $argv;
 end
 
-function p-p --wraps='sudo pacman -Qmq | pacman -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
-    sudo pacman -Qmq | pacman -Rs - $argv;
+function p-p --wraps='doas aura -Qmq | aura -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
+    doas aura -Qmq | aura -Rs - $argv;
 end
 
-function p-ac --wraps='sudo pacman -Sc' --description 'Autoclean (clean up all local caches)'
-    sudo pacman -Sc $argv;
+function p-ac --wraps='doas aura -Sc' --description 'Autoclean (clean up all local caches)'
+    doas aura -Sc $argv;
 end
 
-function p-ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
-    pacman -Si $argv;
+function p-ai --wraps='aura -Si' --description 'Info (aura -Si)'
+    aura -Si $argv;
 end
 
-function p-ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
-    sudo pacman -Qdtq | sudo pacman -Rs – $argv;
+function p-ar --wraps='doas aura -Qdtq | aura -Rs –' --description 'Autoremove (rm deps no longer needed)'
+    doas aura -Qdtq | doas aura -Rs – $argv;
 end
 
-function p-c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
-    sudo pacman -Scc $argv;
+function p-c --wraps='sudo aura -Scc' --description 'Clean (aura -Scc)'
+    doas aura -Scc $argv;
 end
 
 function p-unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
@@ -193,81 +238,6 @@ function a-oj --wraps='sudo aura -Oj' --description 'Uninstall all orphan packag
     sudo aura -Oj
 end
 
-# "command not found"
-function fish_command_not_found
-    __fish_default_command_not_found_handler $argv[1]
-end
-
-# Bash
-function b --description "Exec command in bash. Useful when copy-pasting commands with incompatible syntax to fish "
-    bash -c "$argv"
-end
-
-# Root privileges
-function doas --description 'doas'
-    command doas -- $argv;
-end
-
-# function sudo --description 'sudo (doas)'
-#     command doas $argv;
-# end
-
-function sudoedit --description 'sudoedit (doas)'
-    command doas rnano $argv;
-end
-
-# Confirm before overwriting something
-function rm --description 'rm safely'
-    command rm -i $argv;
-end
-
-function mv --description 'mv safely'
-    command mv -i $argv;
-end
-
-function cp --description 'cp safely'
-    command cp -i $argv;
-end
-
-# Trash bin
-function rmrf --description 'move to trash recursively'
-    kioclient mv (echo (readlink -e $argv)) trash:/
-end
-
-function emptytrash --wraps='ktrash6 --empty' --description 'Empty trash bin'
-    ktrash6 --empty
-    and echo "Trash bin is empty"
-end
-
-function mkcd --description "Create and cd to directory"
-    mkdir $argv
-    and cd $argv
-end
-
-# Copy full file path
-function copypath --description "Copy full file path"
-    switch (echo $XDG_SESSION_TYPE)
-        case x11
-            readlink -e . | xclip -sel clip
-            echo "copied to clipboard"
-        case wayland
-            readlink -e . | wl-copy
-            echo "copied to clipboard"
-    end
-end
-
-## Copy full file path - Xorg
-# function copypath --description "Copy full file path"
-#     readlink -e . | xclip -sel clip
-#     echo "copied to clipboard"
-# end
-
-## Copy full file path - Wayland
-# function copypath --description "Copy full file path"
-#     readlink -e . | wl-copy
-#     echo "copied to clipboard"
-# end
-
 # Eza
 function ls --wraps='eza --long --header --classify --icons' --description 'ls'
     eza --long --header --classify --icons $argv;
@@ -324,6 +294,87 @@ end
 # Htop
 function top --wraps='sudo htop' --description 'Htop'
     sudo htop $argv;
+end
+
+# "command not found"
+function fish_command_not_found
+    __fish_default_command_not_found_handler $argv[1]
+end
+
+# Bash
+function b --description "Exec command in bash. Useful when copy-pasting commands with incompatible syntax to fish "
+    bash -c "$argv"
+end
+
+# Root privileges
+function doas --description 'doas'
+    command doas -- $argv;
+end
+
+# function sudo --description 'sudo (doas)'
+#     command doas $argv;
+# end
+
+function sudoedit --description 'sudoedit (doas)'
+    command doas micro $argv;
+end
+
+# Confirm before overwriting something
+function rm --description 'rm safely'
+    command rm -i $argv;
+end
+
+function mv --description 'mv safely'
+    command mv -i $argv;
+end
+
+function cp --description 'cp safely'
+    command cp -i --preserve=timestamps $argv;
+end
+
+# Trash bin
+function rmrf --description 'move to trash recursively'
+    kioclient mv (echo (readlink -e $argv)) trash:/
+end
+
+function emptytrash --wraps='ktrash6 --empty' --description 'Empty trash bin'
+    ktrash6 --empty
+    and echo "Trash bin is empty"
+end
+
+function mkcd --description "Create and cd to directory"
+    mkdir $argv
+    and cd $argv
+end
+
+# Copy full file path
+function copypath --description "Copy full file path"
+    switch (echo $XDG_SESSION_TYPE)
+        case x11
+            readlink -e . | xclip -sel clip
+            echo "copied to clipboard"
+        case wayland
+            readlink -e . | wl-copy
+            echo "copied to clipboard"
+    end
+end
+
+## Copy full file path - Xorg
+# function copypath --description "Copy full file path"
+#     readlink -e . | xclip -sel clip
+#     echo "copied to clipboard"
+# end
+
+## Copy full file path - Wayland
+# function copypath --description "Copy full file path"
+#     readlink -e . | wl-copy
+#     echo "copied to clipboard"
+# end
+
+# Touch run.sh
+function mkshellscript --description 'Make run.sh'
+    echo "#!/bin/sh" > run.sh
+    chmod +x run.sh
 end
 
 # Backup file

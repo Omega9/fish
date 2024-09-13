@@ -46,8 +46,7 @@ set --export XDG_CURRENT_DESKTOP kde
 set --export KDE_FULL_SESSION true
 set --export XCURSOR_SIZE 24
 set --export XCURSOR_THEME "Dot-Light"
-# set --export GTK_THEME "Nordic"
-set --export GTK_THEME "Amy-Dark-GTK"
+set --export GTK_THEME "Nordic"
 set --export GTK_USE_PORTAL 1
 set --export SSH_ASKPASS '/usr/bin/ksshaskpass'
 set --export SSH_ASKPASS_REQUIRE prefer
