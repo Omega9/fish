@@ -168,40 +168,40 @@ end
 
 # Aura - Installing Packages
 function a-i --wraps='sudo aura -A' --description 'Install (aura -A)'
-    sudo aura -A $argv;
+    aura -A $argv;
 end
 
 function a-u --wraps='sudo aura -Au' --description 'Upgrade (aura -Au)'
-    sudo aura -Au
+    aura -Au
 end
 
 function a-ai --wraps='sudo aura -Ai' --description 'Info (aura -Ai)'
-    sudo aura -Ai $argv;
+    aura -Ai $argv;
 end
 
 function a-s --wraps='sudo aura -As' --description 'Search (aura -As)'
-    sudo aura -As $argv;
+    aura -As $argv;
 end
 
 function a-pb --wraps='sudo aura -Ap' --description 'Display PKGBUILD (aura -Ap)'
-    sudo aura -Ap $argv;
+    aura -Ap $argv;
 end
 
 function a-d --wraps='sudo aura -Ad' --description 'List dependencies (aura -Ad)'
-    sudo aura -Ad $argv;
+    aura -Ad $argv;
 end
 
 # Aura - Package Set Snapshots
 function a-b --wraps='sudo aura -B' --description 'Store a JSON record of all installed packages (aura -B)'
-    sudo aura -B
+    aura -B
 end
 
 function a-br --wraps='sudo aura -Br' --description 'Restore a saved record. Rolls back and uninstalls as necessary (aura -Br)'
-    sudo aura -Br
+    aura -Br
 end
 
 function a-bc --wraps='sudo aura -Bc' --description 'Delete all but the most recent n saved states (aura -Bc)'
-    sudo aura -Bc $argv;
+    aura -Bc $argv;
 end
 
 function a-bl --wraps='aura -Bl' --description 'Show all saved package state filenames (aura -Bl)'
@@ -210,19 +210,19 @@ end
 
 # Aura - Downgrading via the Package Cache
 function a-c --wraps='sudo aura -C' --description 'Downgrade a package (aura -C)'
-    sudo aura -C $argv;
+    aura -C $argv;
 end
 
 function a-cs --wraps='sudo aura -Cs' --description 'Search the cache for files that match a regex (aura -Cs)'
-    sudo aura -Cs $argv;
+    aura -Cs $argv;
 end
 
 function a-cc --wraps='sudo aura -Cc' --description 'Delete all but recent n versions of each cached package (aura -Cc)'
-    sudo aura -Cc $argv;
+    aura -Cc $argv;
 end
 
 function a-cv --wraps='sudo aura -Cv' --description 'Delete cache (aura -Cv)'
-    sudo aura -Cv
+    aura -Cv
 end
 
 # Aura - Managing Orphan Packages
