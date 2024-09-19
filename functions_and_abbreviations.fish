@@ -1,6 +1,14 @@
-### Functions
+#####################
+#####################
+##### Functions #####
+#####################
+#####################
 
-# Terminal Shortcuts
+############
+### Help ###
+############
+
+## Terminal Shortcuts
 # https://itsfoss.com/linux-terminal-shortcuts/
 function t-h --description 'Terminal Shortcuts'
     echo -n "Terminal Shortcuts
@@ -29,7 +37,7 @@ function t-h --description 'Terminal Shortcuts'
     " | lolcat
 end
 
-# Pacman & Aura help
+## Pacman & Aura help
 function p-h --description 'Pacman functions'
     echo -n "Pacman functions
     ‣ p-i       Install
@@ -71,100 +79,116 @@ function a-h --description 'Aura functions'
     " | lolcat
 end
 
+function y-h --description 'Yay functions'
+    echo -n "Yay functions
+
+    ‣ y-i   Install
+    ‣ y-u   Upgrade
+    ‣ y-r   Remove
+    ‣ y-ai  Info
+    ‣ y-s   Search
+    ‣ y-pb  Display PKGBUILD
+    " | lolcat
+end
+
+##########################
+### Package Management ###
+##########################
+
 # Topgrade with less questions
 function tg --wraps='sudo pacman -S' --description 'Topgrade with less questions'
     topgrade --disable node;
 end
 
-# Pacman (just pacman)
-# function p-i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
-#     sudo pacman -S $argv;
-# end
-
-# function p-u --wraps='sudo pacman -Syu' --description 'Update (pacman -Syu)'
-#     sudo pacman -Syu $argv;
-# end
-
-# function p-s --wraps='pacman -Ss' --description 'Search (pacman -Ss)'
-#     pacman -Ss $argv;
-# end
-
-# function p-rdd --wraps='sudo pacman -Rdd ' --description 'Remove package without dependencies (pacman -Rdd)'
-#     sudo pacman -Rdd $argv;
-# end
-
-# function p-r --wraps='sudo pacman -Rs' --description 'Remove (pacman -Rs)'
-#     sudo pacman -Rs $argv;
-# end
-
-# function p-p --wraps='sudo pacman -Qmq | pacman -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
-#     sudo pacman -Qmq | pacman -Rs - $argv;
-# end
-
-# function p-ac --wraps='sudo pacman -Sc' --description 'Autoclean (clean up all local caches)'
-#     sudo pacman -Sc $argv;
-# end
-
-# function p-ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
-#     pacman -Si $argv;
-# end
-
-# function p-ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
-#     sudo pacman -Qdtq | sudo pacman -Rs – $argv;
-# end
-
-# function p-c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
-#     sudo pacman -Scc $argv;
-# end
-
-# function p-unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
-#     sudo rm /var/lib/pacman/db.lck $argv;
-# end
-
-# Aura - Pacman commands)
-function p-i --wraps='doas aura -S' --description 'Install (aura -S)'
-    doas aura -S $argv;
+## Pacman (just pacman)
+function p-i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
+    sudo pacman -S $argv;
 end
 
-function p-u --wraps='doas aura -Syu' --description 'Update (aura -Syu)'
-    doas aura -Syu $argv;
+function p-u --wraps='sudo pacman -Syu' --description 'Update (pacman -Syu)'
+    sudo pacman -Syu $argv;
 end
 
-function p-s --wraps='aura -Ss' --description 'Search (aura -Ss)'
-    aura -Ss $argv;
+function p-s --wraps='pacman -Ss' --description 'Search (pacman -Ss)'
+    pacman -Ss $argv;
 end
 
-function p-rdd --wraps='doas aura -Rdd ' --description 'Remove package without dependencies (aura -Rdd)'
-    doas aura -Rdd $argv;
+function p-rdd --wraps='sudo pacman -Rdd ' --description 'Remove package without dependencies (pacman -Rdd)'
+    sudo pacman -Rdd $argv;
 end
 
-function p-r --wraps='doas aura -Rs' --description 'Remove (aura -Rs)'
-    doas aura -Rs $argv;
+function p-r --wraps='sudo pacman -Rs' --description 'Remove (pacman -Rs)'
+    sudo pacman -Rs $argv;
 end
 
-function p-p --wraps='doas aura -Qmq | aura -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
-    doas aura -Qmq | aura -Rs - $argv;
+function p-p --wraps='sudo pacman -Qmq | pacman -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
+    sudo pacman -Qmq | pacman -Rs - $argv;
 end
 
-function p-ac --wraps='doas aura -Sc' --description 'Autoclean (clean up all local caches)'
-    doas aura -Sc $argv;
+function p-ac --wraps='sudo pacman -Sc' --description 'Autoclean (clean up all local caches)'
+    sudo pacman -Sc $argv;
 end
 
-function p-ai --wraps='aura -Si' --description 'Info (aura -Si)'
-    aura -Si $argv;
+function p-ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
+    pacman -Si $argv;
 end
 
-function p-ar --wraps='doas aura -Qdtq | aura -Rs –' --description 'Autoremove (rm deps no longer needed)'
-    doas aura -Qdtq | doas aura -Rs – $argv;
+function p-ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
+    sudo pacman -Qdtq | sudo pacman -Rs – $argv;
 end
 
-function p-c --wraps='sudo aura -Scc' --description 'Clean (aura -Scc)'
-    doas aura -Scc $argv;
+function p-c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
+    sudo pacman -Scc $argv;
 end
 
 function p-unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
     sudo rm /var/lib/pacman/db.lck $argv;
 end
+
+## Aura - Pacman commands
+# function p-i --wraps='doas aura -S' --description 'Install (aura -S)'
+#     doas aura -S $argv;
+# end
+
+# function p-u --wraps='doas aura -Syu' --description 'Update (aura -Syu)'
+#     doas aura -Syu $argv;
+# end
+
+# function p-s --wraps='aura -Ss' --description 'Search (aura -Ss)'
+#     aura -Ss $argv;
+# end
+
+# function p-rdd --wraps='doas aura -Rdd ' --description 'Remove package without dependencies (aura -Rdd)'
+#     doas aura -Rdd $argv;
+# end
+
+# function p-r --wraps='doas aura -Rs' --description 'Remove (aura -Rs)'
+#     doas aura -Rs $argv;
+# end
+
+# function p-p --wraps='doas aura -Qmq | aura -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
+#     doas aura -Qmq | aura -Rs - $argv;
+# end
+
+# function p-ac --wraps='doas aura -Sc' --description 'Autoclean (clean up all local caches)'
+#     doas aura -Sc $argv;
+# end
+
+# function p-ai --wraps='aura -Si' --description 'Info (aura -Si)'
+#     aura -Si $argv;
+# end
+
+# function p-ar --wraps='doas aura -Qdtq | aura -Rs –' --description 'Autoremove (rm deps no longer needed)'
+#     doas aura -Qdtq | doas aura -Rs – $argv;
+# end
+
+# function p-c --wraps='sudo aura -Scc' --description 'Clean (aura -Scc)'
+#     doas aura -Scc $argv;
+# end
+
+# function p-unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
+#     sudo rm /var/lib/pacman/db.lck $argv;
+# end
 
 # Aura - Installing Packages
 function a-i --wraps='sudo aura -A' --description 'Install (aura -A)'
@@ -237,6 +261,35 @@ end
 function a-oj --wraps='sudo aura -Oj' --description 'Uninstall all orphan packages (aura -Oj)'
     sudo aura -Oj
 end
+
+# Yay
+function y-i --wraps='yay -S' --description 'Install (yay -S)'
+    yay -S $argv;
+end
+
+function y-u --wraps='yay -Syu' --description 'Upgrade (yay -Syu)'
+    yay -Syu
+end
+
+function y-r --wraps='yay -Rns' --description 'Remove (yay -Rns)'
+    yay -Rns $argv;
+end
+
+function y-ai --wraps='yay -Si' --description 'Info (yay -Si)'
+    yay -Si $argv;
+end
+
+function y-s --wraps='yay -Ss' --description 'Search (yay -Ss)'
+    yay -Ss $argv;
+end
+
+function y-pb --wraps='yay -Gp' --description 'Display PKGBUILD (yay -Gp)'
+    yay -Gp $argv;
+end
+
+##########
+## Var ###
+##########
 
 # Eza
 function ls --wraps='eza --long --header --classify --icons' --description 'ls'
@@ -484,7 +537,50 @@ end
 #    tar -zxvf  $argv;
 # end
 
-# NET
+# CPU Scaling governors for realtime audio
+# https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
+function cpugov-performance --wraps='sudo cpupower frequency-set -g performance' --description 'Run the CPU at the maximum frequency'
+    sudo cpupower frequency-set -g performance
+end
+
+function cpugov-ondemand --wraps='sudo cpupower frequency-set -g ondemand' --description 'Scales the frequency dynamically'
+    sudo cpupower frequency-set -g ondemand
+end
+
+function cpugov-schedutil --wraps='sudo cpupower frequency-set -g schedutil' --description 'Scheduler-driven CPU frequency selection'
+    sudo cpupower frequency-set -g schedutil
+end
+
+# FFmpeg
+function ffc --description 'Convert anything with FFmpeg'
+    ffmpeg -i $argv[1] -y $argv[1].$argv[2]
+end
+
+# ImageMagick
+function imc --description 'Convert anything with ImageMagick'
+    # magick $argv[1] $argv[1].$argv[2]
+    convert $argv[1] $argv[1].$argv[2]
+end
+
+# Ascii-image-converter
+# https://github.com/TheZoraiz/ascii-image-converter
+function image-to-ascii --description 'Convert image to ASCII-art'
+    ascii-image-converter $argv  -f -C -s .
+end
+
+function image-to-braille --description 'Convert image to Braille-art'
+    ascii-image-converter $argv  -f -C -b -s .
+end
+
+# The most useful function
+function rickroll --description 'the terminal rickroll'
+    curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
+end
+
+###############
+### Network ###
+###############
+
 function myip --description 'What is my IP?'
     curl ifconfig.co
 end
@@ -542,47 +638,9 @@ function showgit --description "Show git origin"
     open (git remote get-url origin)
 end
 
-# CPU Scaling governors for realtime audio
-# https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors
-function cpugov-performance --wraps='sudo cpupower frequency-set -g performance' --description 'Run the CPU at the maximum frequency'
-    sudo cpupower frequency-set -g performance
-end
-
-function cpugov-ondemand --wraps='sudo cpupower frequency-set -g ondemand' --description 'Scales the frequency dynamically'
-    sudo cpupower frequency-set -g ondemand
-end
-
-function cpugov-schedutil --wraps='sudo cpupower frequency-set -g schedutil' --description 'Scheduler-driven CPU frequency selection'
-    sudo cpupower frequency-set -g schedutil
-end
-
-# FFmpeg
-function ffc --description 'Convert anything with FFmpeg'
-    ffmpeg -i $argv[1] -y $argv[1].$argv[2]
-end
-
-# ImageMagick
-function imc --description 'Convert anything with ImageMagick'
-    # magick $argv[1] $argv[1].$argv[2]
-    convert $argv[1] $argv[1].$argv[2]
-end
-
-# Ascii-image-converter
-# https://github.com/TheZoraiz/ascii-image-converter
-function image-to-ascii --description 'Convert image to ASCII-art'
-    ascii-image-converter $argv  -f -C -s .
-end
-
-function image-to-braille --description 'Convert image to Braille-art'
-    ascii-image-converter $argv  -f -C -b -s .
-end
-
-# The most needed function
-function rickroll --description 'the terminal rickroll'
-    curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
-end
-
-### Abbreviations
+#####################
+### Abbreviations ###
+#####################
 
 # Yt-dlp extract
 abbr yta-aac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'

@@ -45,6 +45,7 @@
 - `t-h` для шорткатов терминала
 - `p-h` для команд Pacman
 - `a-h` для команд Aura
+- `Y-h` для команд Yay
 
 [![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
 
@@ -55,10 +56,10 @@
 
 ## Зависимости и рекомендации
 - [OpenDoas](https://wiki.archlinux.org/title/Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9))
-- Xclip для `pbcopy`/`pbpaste` на Xorg
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) для `pbcopy`/`pbpaste` на Wayland
+- Xclip для `pbcopy`/`pbpaste` на Xorg
 - notify-send для `done`
-- [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
+- [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/)) и/или [Yay](https://github.com/Jguer/yay)
 - [Eza](https://eza.rocks) для `ls` и `tree`
 - [Bat](https://github.com/sharkdp/bat) для `cat`
 - [Tere](https://github.com/mgunyho/tere) - быстрая альтернатива `cd + ls`

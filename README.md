@@ -45,6 +45,7 @@ Quick reference:
 - `t-h` for terminal shortcuts
 - `p-h` for Pacman commands
 - `a-h` for Aura commands
+- `y-h` for Aura commands
 
 [![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
 
@@ -55,10 +56,10 @@ Quick reference:
 
 ## Dependencies and recommendations
 - [OpenDoas](https://wiki.archlinux.org/title/Doas)
-- Xclip for `pbcopy`/`pbpaste` on Xorg
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) for `pbcopy`/`pbpaste` on Wayland
+- Xclip for `pbcopy`/`pbpaste` on Xorg
 - notify-send for `done`
-- [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/))
+- [Aura](https://fosskers.github.io/aura/) ([aura-bin](https://aur.archlinux.org/packages/aura-bin/)) and/or [Yay](https://github.com/Jguer/yay)
 - [Eza](https://eza.rocks) for `ls` and `tree`
 - [Bat](https://github.com/sharkdp/bat) for `cat`
 - [Tere](https://github.com/mgunyho/tere) - a faster alternative to `cd + ls`
