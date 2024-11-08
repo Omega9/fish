@@ -45,7 +45,8 @@ set --export QT_STYLE_OVERRIDE kvantum-dark
 set --export XDG_CURRENT_DESKTOP kde
 set --export KDE_FULL_SESSION true
 set --export XCURSOR_SIZE 24
-set --export XCURSOR_THEME "Dot-Light"
+# set --export XCURSOR_THEME "Dot-Light"
+set --export XCURSOR_THEME "Radioactive-white"
 set --export GTK_THEME "Nordic"
 set --export GTK_USE_PORTAL 1
 set --export SSH_ASKPASS '/usr/bin/ksshaskpass'
