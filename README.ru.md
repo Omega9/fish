@@ -44,8 +44,8 @@
 Быстрая справка:
 - `t-h` для шорткатов терминала
 - `p-h` для команд Pacman
+- `y-h` для команд Yay
 - `a-h` для команд Aura
-- `Y-h` для команд Yay
 
 [![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
 
@@ -77,7 +77,7 @@
 - [ImageMagick](https://imagemagick.org) для `imc`
 - *(опционально)* `kioclient` и `ktrash6` из KDE для корзины
 - *(опционально)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
-- *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar), [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) или [Oblique Strategies](https://github.com/nph278/oblique-strategies-cli) для `fish_greeting`
+- *(опционально)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar), [International Fixed Calender](https://github.com/gauravnumber/ifc-cli), [Oblique Strategies](https://github.com/nph278/oblique-strategies-cli) или [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)) для `fish_greeting`
 - *(опционально)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) или [Ponysay](https://erkin.party/ponysay/) для `fish_greeting`
 - *(опционально)* [Lolcat](https://github.com/busyloop/lolcat) для цветастой помощи
 

@@ -44,8 +44,8 @@ Some part I carried over from my zsh configuration. Some of them were added by m
 Quick reference:
 - `t-h` for terminal shortcuts
 - `p-h` for Pacman commands
+- `y-h` for YAY commands
 - `a-h` for Aura commands
-- `y-h` for Aura commands
 
 [![asciicast](https://asciinema.org/a/434291.svg)](https://asciinema.org/a/434291)
 
@@ -77,7 +77,7 @@ Quick reference:
 - [ImageMagick](https://imagemagick.org) for `imc`
 - *(optional)* `kioclient` and `ktrash6` from KDE for trash bin
 - *(optional)* [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
-- *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar), [International Fixed Calender](https://github.com/gauravnumber/ifc-cli) or [Oblique Strategies](https://github.com/nph278/oblique-strategies-cli) for `fish_greeting`
+- *(optional)* [Ddate](https://en.wikipedia.org/wiki/Discordian_calendar), [International Fixed Calender](https://github.com/gauravnumber/ifc-cli), [Oblique Strategies](https://github.com/nph278/oblique-strategies-cli) of [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)) for `fish_greeting`
 - *(optional)* [Pokemonsay](https://github.com/HRKings/pokemonsay-newgenerations.git) or [Ponysay](https://erkin.party/ponysay/) for `fish_greeting`
 - *(optional)* [Lolcat](https://github.com/busyloop/lolcat) for colorful help messages
 

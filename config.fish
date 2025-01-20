@@ -40,7 +40,7 @@ set -gx VISUAL code
 set -gx BROWSER vivaldi-stable
 set --export CHROME_EXECUTABLE vivaldi-stable
 set --export GIT_EDITOR micro
-set --export QT_QPA_PLATFORMTHEME qt6ct
+# set --export QT_QPA_PLATFORMTHEME qt6ct
 set --export QT_STYLE_OVERRIDE kvantum-dark
 set --export XDG_CURRENT_DESKTOP kde
 set --export KDE_FULL_SESSION true
@@ -93,7 +93,9 @@ function fish_greeting -d "Lasita-a diri saluton"
     # ddate | ponysay -c # Discordian date with Ponysay
     # ifc | pokemonsay -N # International Fixed Calendar with Pokemonsay
     # ifc | ponysay -c # International Fixed Calendar with Ponysay
-    oblique-strategies | pokemonsay -N # Oblique Strategies with Pokemonsay
+    # oblique-strategies | pokemonsay -N # Oblique Strategies with Pokemonsay
     # oblique-strategies | ponysay -c # Oblique Strategies with Ponysay
+    fortune | pokemonsay -N # Fortune with Pokemonsay
+    # fortune | ponysay -c # Fortune with Ponysay
     set_color normal
 end

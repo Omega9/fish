@@ -54,6 +54,18 @@ function p-h --description 'Pacman functions'
     " | lolcat
 end
 
+function y-h --description 'Yay functions'
+    echo -n "Yay functions
+
+    ‣ y-i   Install
+    ‣ y-u   Upgrade
+    ‣ y-r   Remove
+    ‣ y-ai  Info
+    ‣ y-s   Search
+    ‣ y-pb  Display PKGBUILD
+    " | lolcat
+end
+
 function a-h --description 'Aura functions'
     echo -n "Aura functions
     ‣ a-b   Store a JSON record of all installed packages
@@ -76,18 +88,6 @@ function a-h --description 'Aura functions'
     ‣ a-s   Search
     ‣ a-pb  Display PKGBUILD
     ‣ a-d   List dependencies
-    " | lolcat
-end
-
-function y-h --description 'Yay functions'
-    echo -n "Yay functions
-
-    ‣ y-i   Install
-    ‣ y-u   Upgrade
-    ‣ y-r   Remove
-    ‣ y-ai  Info
-    ‣ y-s   Search
-    ‣ y-pb  Display PKGBUILD
     " | lolcat
 end
 
