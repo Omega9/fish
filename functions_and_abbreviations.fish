@@ -424,9 +424,15 @@ end
 #     echo "copied to clipboard"
 # end
 
-# Touch run.sh
-function mkshellscript --description 'Make run.sh'
-    echo "#!/bin/sh" > run.sh
+# Touch run.sh  for stealing stuff
+function mkshellscript --description 'Make run.sh for stealing stuff'
+    echo "#!/bin/sh
+    
+gallery-dl --cookies-from-browser vivaldi '
+torify gallery-dl --cookies-from-browser vivaldi '
+
+yt-dlp --cookies-from-browser vivaldi '
+torify yt-dlp --cookies-from-browser vivaldi '" > run.sh
     chmod +x run.sh
 end
 
