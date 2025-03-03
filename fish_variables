@@ -16,7 +16,7 @@ SETUVAR __done_min_cmd_duration:20000
 SETUVAR __done_notification_urgency_level:low
 SETUVAR __done_notification_urgency_level_failure:normal
 SETUVAR __done_notify_sound:0
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_1tydl:torify\x20youtube\x2ddl
 SETUVAR _fish_abbr_1ydl:youtube\x2ddl
 SETUVAR _fish_abbr_gdl:gallery\x2ddl
@@ -71,7 +71,7 @@ SETUVAR fish_color_operator:00a6b2
 SETUVAR fish_color_param:00afff
 SETUVAR fish_color_quote:999900
 SETUVAR fish_color_redirection:00afff
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen

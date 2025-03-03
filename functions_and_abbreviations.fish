@@ -427,7 +427,7 @@ end
 # Touch run.sh  for stealing stuff
 function mkshellscript --description 'Make run.sh for stealing stuff'
     echo "#!/bin/sh
-    
+
 gallery-dl --cookies-from-browser vivaldi '
 torify gallery-dl --cookies-from-browser vivaldi '
 
@@ -642,22 +642,6 @@ end
 
 function showgit --description "Show git origin"
     open (git remote get-url origin)
-end
-
-# FFmpeg
-function ffc --description 'Convert anything with FFmpeg'
-    ffmpeg -i $argv[1] -y $argv[1].$argv[2]
-end
-
-# ImageMagick
-function imc --description 'Convert anything with ImageMagick'
-    # magick $argv[1] $argv[1].$argv[2]
-    convert $argv[1] $argv[1].$argv[2]
-end
-
-# RickRoll
-function rickroll --description 'the terminal rickroll'
-    curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
 end
 
 #####################
