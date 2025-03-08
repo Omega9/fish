@@ -434,8 +434,8 @@ function mkshellscript --description 'Make run.sh for stealing stuff'
 # gallery-dl --cookies-from-browser vivaldi '
 # torify gallery-dl --cookies-from-browser vivaldi '
 
-# yt-dlp --cookies-from-browser vivaldi '
-# torify yt-dlp --cookies-from-browser vivaldi '" > run.sh
+# yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 '
+# torify yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 '" > run.sh
     chmod +x run.sh
 end
 
