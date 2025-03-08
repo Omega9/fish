@@ -428,11 +428,14 @@ end
 function mkshellscript --description 'Make run.sh for stealing stuff'
     echo "#!/bin/sh
 
-gallery-dl --cookies-from-browser vivaldi '
-torify gallery-dl --cookies-from-browser vivaldi '
+# gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp '
+# torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp '
 
-yt-dlp --cookies-from-browser vivaldi '
-torify yt-dlp --cookies-from-browser vivaldi '" > run.sh
+# gallery-dl --cookies-from-browser vivaldi '
+# torify gallery-dl --cookies-from-browser vivaldi '
+
+# yt-dlp --cookies-from-browser vivaldi '
+# torify yt-dlp --cookies-from-browser vivaldi '" > run.sh
     chmod +x run.sh
 end
 
@@ -681,3 +684,8 @@ abbr gdl 'gallery-dl --cookies-from-browser vivaldi'
 abbr gdlb 'gallery-dl --cookies-from-browser vivaldi -i'
 abbr tgdl 'torify gallery-dl --cookies-from-browser vivaldi'
 abbr tgdlb 'torify gallery-dl --cookies-from-browser vivaldi -i'
+
+abbr gdl-lossy 'gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp'
+abbr gdlb-lossy 'gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp -i'
+abbr tgdl-lossy 'torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp'
+abbr tgdlb-lossy 'torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp -i'
