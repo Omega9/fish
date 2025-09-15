@@ -1,3 +1,3 @@
 if test -z "$TO_DIR"
-  set -U TO_DIR ~/.tofish
+    set -U TO_DIR ~/.tofish
 end

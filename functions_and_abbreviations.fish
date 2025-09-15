@@ -97,52 +97,52 @@ end
 
 # Topgrade with less questions
 function tg --wraps='sudo pacman -S' --description 'Topgrade with less questions'
-    topgrade --disable node;
+    topgrade --disable node
 end
 
 ## Pacman (just pacman)
 function p-i --wraps='sudo pacman -S' --description 'Install (pacman -S)'
-    sudo pacman -S $argv;
+    sudo pacman -S $argv
 end
 
 function p-u --wraps='sudo pacman -Syu' --description 'Update (pacman -Syu)'
-    sudo pacman -Syu $argv;
+    sudo pacman -Syu $argv
 end
 
 function p-s --wraps='pacman -Ss' --description 'Search (pacman -Ss)'
-    pacman -Ss $argv;
+    pacman -Ss $argv
 end
 
 function p-rdd --wraps='sudo pacman -Rdd ' --description 'Remove package without dependencies (pacman -Rdd)'
-    sudo pacman -Rdd $argv;
+    sudo pacman -Rdd $argv
 end
 
 function p-r --wraps='sudo pacman -Rs' --description 'Remove (pacman -Rs)'
-    sudo pacman -Rs $argv;
+    sudo pacman -Rs $argv
 end
 
 function p-p --wraps='sudo pacman -Qmq | pacman -Rs -' --description 'Purge (rm pkgs no longer included in any repos)'
-    sudo pacman -Qmq | pacman -Rs - $argv;
+    sudo pacman -Qmq | pacman -Rs - $argv
 end
 
 function p-ac --wraps='sudo pacman -Sc' --description 'Autoclean (clean up all local caches)'
-    sudo pacman -Sc $argv;
+    sudo pacman -Sc $argv
 end
 
 function p-ai --wraps='pacman -Si' --description 'Info (pacman -Si)'
-    pacman -Si $argv;
+    pacman -Si $argv
 end
 
 function p-ar --wraps='sudo pacman -Qdtq | pacman -Rs –' --description 'Autoremove (rm deps no longer needed)'
-    sudo pacman -Qdtq | sudo pacman -Rs – $argv;
+    sudo pacman -Qdtq | sudo pacman -Rs – $argv
 end
 
 function p-c --wraps='sudo pacman -Scc' --description 'Clean (pacman -Scc)'
-    sudo pacman -Scc $argv;
+    sudo pacman -Scc $argv
 end
 
 function p-unlock --wraps='sudo rm /var/lib/pacman/db.lck' --description 'Unlock Pacman'
-    sudo rm /var/lib/pacman/db.lck $argv;
+    sudo rm /var/lib/pacman/db.lck $argv
 end
 
 ## Aura - Pacman commands
@@ -192,7 +192,7 @@ end
 
 # Aura - Installing Packages
 function a-i --wraps='sudo aura -A' --description 'Install (aura -A)'
-    aura -A $argv;
+    aura -A $argv
 end
 
 function a-u --wraps='sudo aura -Au' --description 'Upgrade (aura -Au)'
@@ -200,19 +200,19 @@ function a-u --wraps='sudo aura -Au' --description 'Upgrade (aura -Au)'
 end
 
 function a-ai --wraps='sudo aura -Ai' --description 'Info (aura -Ai)'
-    aura -Ai $argv;
+    aura -Ai $argv
 end
 
 function a-s --wraps='sudo aura -As' --description 'Search (aura -As)'
-    aura -As $argv;
+    aura -As $argv
 end
 
 function a-pb --wraps='sudo aura -Ap' --description 'Display PKGBUILD (aura -Ap)'
-    aura -Ap $argv;
+    aura -Ap $argv
 end
 
 function a-d --wraps='sudo aura -Ad' --description 'List dependencies (aura -Ad)'
-    aura -Ad $argv;
+    aura -Ad $argv
 end
 
 # Aura - Package Set Snapshots
@@ -225,7 +225,7 @@ function a-br --wraps='sudo aura -Br' --description 'Restore a saved record. Rol
 end
 
 function a-bc --wraps='sudo aura -Bc' --description 'Delete all but the most recent n saved states (aura -Bc)'
-    aura -Bc $argv;
+    aura -Bc $argv
 end
 
 function a-bl --wraps='aura -Bl' --description 'Show all saved package state filenames (aura -Bl)'
@@ -234,15 +234,15 @@ end
 
 # Aura - Downgrading via the Package Cache
 function a-c --wraps='sudo aura -C' --description 'Downgrade a package (aura -C)'
-    aura -C $argv;
+    aura -C $argv
 end
 
 function a-cs --wraps='sudo aura -Cs' --description 'Search the cache for files that match a regex (aura -Cs)'
-    aura -Cs $argv;
+    aura -Cs $argv
 end
 
 function a-cc --wraps='sudo aura -Cc' --description 'Delete all but recent n versions of each cached package (aura -Cc)'
-    aura -Cc $argv;
+    aura -Cc $argv
 end
 
 function a-cv --wraps='sudo aura -Cv' --description 'Delete cache (aura -Cv)'
@@ -255,7 +255,7 @@ function a-o --wraps='aura -O' --description 'Display orphan packages (aura -O)'
 end
 
 function a-oa --wraps='sudo aura -Oa' --description 'Change install reason to Explicitly installed (aura -Oa)'
-    sudo aura -Oa $argv;
+    sudo aura -Oa $argv
 end
 
 function a-oj --wraps='sudo aura -Oj' --description 'Uninstall all orphan packages (aura -Oj)'
@@ -264,7 +264,7 @@ end
 
 # Yay
 function y-i --wraps='yay -S' --description 'Install (yay -S)'
-    yay -S $argv;
+    yay -S $argv
 end
 
 function y-u --wraps='yay -Syu' --description 'Upgrade (yay -Syu)'
@@ -272,19 +272,19 @@ function y-u --wraps='yay -Syu' --description 'Upgrade (yay -Syu)'
 end
 
 function y-r --wraps='yay -Rns' --description 'Remove (yay -Rns)'
-    yay -Rns $argv;
+    yay -Rns $argv
 end
 
 function y-ai --wraps='yay -Si' --description 'Info (yay -Si)'
-    yay -Si $argv;
+    yay -Si $argv
 end
 
 function y-s --wraps='yay -Ss' --description 'Search (yay -Ss)'
-    yay -Ss $argv;
+    yay -Ss $argv
 end
 
 function y-pb --wraps='yay -Gp' --description 'Display PKGBUILD (yay -Gp)'
-    yay -Gp $argv;
+    yay -Gp $argv
 end
 
 ##########
@@ -292,12 +292,12 @@ end
 ##########
 
 # Eza
-function ls --wraps='eza --long --header --classify --icons' --description 'ls'
-    eza --long --header --classify --icons $argv;
+function ls --wraps='eza --long --header --classify --icons' --description ls
+    eza --long --header --classify --icons $argv
 end
 
-function tree --wraps='eza --tree --level=2 --long --header --classify --icons' --description 'Tree'
-    eza --tree --level=2 --long --header --classify --icons $argv;
+function tree --wraps='eza --tree --level=2 --long --header --classify --icons' --description Tree
+    eza --tree --level=2 --long --header --classify --icons $argv
 end
 
 # Tere
@@ -308,7 +308,7 @@ end
 
 # fd
 function find --description 'Find with fd'
-    command fd -H $argv;
+    command fd -H $argv
 end
 
 # grep
@@ -318,35 +318,35 @@ end
 
 # ripgrep
 function grep --description 'Color grep'
-    command rg --color=auto $argv;
+    command rg --color=auto $argv
 end
 
 function du --description 'Count space'
-    command du -h $argv;
+    command du -h $argv
 end
 
 function df --description 'alias df df -h'
-    command df -h $argv;
+    command df -h $argv
 end
 
 # Micro
 function edit --wraps='micro' --description 'Edit file'
-    micro $argv;
+    micro $argv
 end
 
 # Bat
 function cat --wraps='bat' --description 'A cat(1) clone with wings'
-    bat $argv;
+    bat $argv
 end
 
 # Delta
 function diff --wraps='delta' --description 'A viewer for git and diff output'
-    delta $argv;
+    delta $argv
 end
 
 # Htop
-function top --wraps='sudo htop' --description 'Htop'
-    sudo htop $argv;
+function top --wraps='sudo htop' --description Htop
+    sudo htop $argv
 end
 
 # "command not found"
@@ -360,8 +360,8 @@ function b --description "Exec command in bash. Useful when copy-pasting command
 end
 
 # Root privileges
-function doas --description 'doas'
-    command doas -- $argv;
+function doas --description doas
+    command doas -- $argv
 end
 
 # function sudo --description 'sudo (doas)'
@@ -369,20 +369,20 @@ end
 # end
 
 function sudoedit --description 'sudoedit (doas)'
-    command doas micro $argv;
+    command doas micro $argv
 end
 
 # Confirm before overwriting something
 function rm --description 'rm safely'
-    command rm -i $argv;
+    command rm -i $argv
 end
 
 function mv --description 'mv safely'
-    command mv -i $argv;
+    command mv -i $argv
 end
 
 function cp --description 'cp safely'
-    command cp -i --preserve=timestamps $argv;
+    command cp -i --preserve=timestamps $argv
 end
 
 # Trash bin
@@ -435,8 +435,15 @@ function mkshellscript --description 'Make run.sh for stealing stuff'
 # torify gallery-dl --cookies-from-browser vivaldi '
 
 # yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 '
-# torify yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 '" > run.sh
+# torify yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 '" >run.sh
     chmod +x run.sh
+end
+
+## Trim first 3 seconds of video (intro)
+function trim_video --description 'Trim first 3 seconds of video (intro)'
+    ffmpeg -i "$argv" -ss 3 -c:v copy -c:a copy "trimmed_$argv"
+    touch -r "$argv" "trimmed_$argv"
+    # ffmpeg -i "$argv[1]" -ss "$argv[2]" -c copy "trimmed_$argv[1]"
 end
 
 # Backup file
@@ -451,7 +458,7 @@ end
 
 # Get error messages from journalctl
 function jctl --wraps='journalctl -p 3 -xb' --description 'Get error messages from journalctl'
-    journalctl -p 3 -xb $argv;
+    journalctl -p 3 -xb $argv
 end
 
 function !! --description "Run the last command"
@@ -482,7 +489,7 @@ function pbcopy --description "Copy data from STDIN to the clipboard"
     end
 end
 
-function pbpaste  --description "Paste data from the Clipboard"
+function pbpaste --description "Paste data from the Clipboard"
     switch (echo $XDG_SESSION_TYPE)
         case x11
             xclip -selection clipboard -o
@@ -574,11 +581,11 @@ end
 # Ascii-image-converter
 # https://github.com/TheZoraiz/ascii-image-converter
 function image-to-ascii --description 'Convert image to ASCII-art'
-    ascii-image-converter $argv  -f -C -s .
+    ascii-image-converter $argv -f -C -s .
 end
 
 function image-to-braille --description 'Convert image to Braille-art'
-    ascii-image-converter $argv  -f -C -b -s .
+    ascii-image-converter $argv -f -C -b -s .
 end
 
 # The most useful function
@@ -607,23 +614,31 @@ function interfaces
 end
 
 function wget --description 'Download with Wget'
-    command wget -c $argv;
+    command wget -c $argv
 end
 
 function wgetb --description 'Batch download with Wget'
-    command wget -c -i $argv;
+    command wget -c -i $argv
 end
 
 function wgets --description 'Download website with Wget'
-    command wget --mirror --convert-links --adjust-extension --page-requisites --no-parent $argv;
+    command wget --mirror --convert-links --adjust-extension --page-requisites --no-parent $argv
 end
 
-function ping --description 'Ping'
-    command ping -c 5 $argv;
+function wcurl --description 'Download with Wcurl'
+    command wcurl -c $argv
+end
+
+function wcurlb --description 'Batch download with Wcurl'
+    command wcurl -c -i $argv
+end
+
+function ping --description Ping
+    command ping -c 5 $argv
 end
 
 function www --wraps='python -m SimpleHTTPServer 8000' --description 'Simple web-server'
-    python -m SimpleHTTPServer 8000;
+    python -m SimpleHTTPServer 8000
 end
 
 function qrencode

@@ -34,7 +34,6 @@ set -x LXVST_PATH /usr/lib/lxvst /usr/local/lib/lxvst $HOME/.lxvst
 set -x LADSPA_PATH /usr/lib/ladspa /usr/local/lib/ladspa $HOME/.ladspa
 set -x DSSI_PATH /usr/lib/dssi /usr/local/lib/dssi $HOME/.dssi
 
-
 ## Export
 set -gx EDITOR micro
 set -gx VISUAL code
@@ -42,15 +41,15 @@ set -gx BROWSER vivaldi-stable
 set --export CHROME_EXECUTABLE vivaldi-stable
 set --export GIT_EDITOR micro
 # set --export QT_QPA_PLATFORMTHEME qt6ct
-set --export QT_STYLE_OVERRIDE kvantum-dark
+# set --export QT_STYLE_OVERRIDE kvantum-dark
+set --export QT_STYLE_OVERRIDE klassy
 set --export XDG_CURRENT_DESKTOP kde
 set --export KDE_FULL_SESSION true
 set --export XCURSOR_SIZE 24
-# set --export XCURSOR_THEME "Dot-Light"
-set --export XCURSOR_THEME "Radioactive-white"
-set --export GTK_THEME "Nordic"
+set --export XCURSOR_THEME Radioactive-white
+set --export GTK_THEME Breeze
 set --export GTK_USE_PORTAL 1
-set --export SSH_ASKPASS '/usr/bin/ksshaskpass'
+set --export SSH_ASKPASS /usr/bin/ksshaskpass
 set --export SSH_ASKPASS_REQUIRE prefer
 ## Wine
 set -gx WINEFSYNC 1
@@ -77,7 +76,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 ## Done settings
 set -U __done_min_cmd_duration 20000
-set -U __done_exclude 'git (?!push|pull)'  # default: all git commands, except push and pull. accepts a regex.
+set -U __done_exclude 'git (?!push|pull)' # default: all git commands, except push and pull. accepts a regex.
 set -U __done_notify_sound 0
 set -U __done_notification_urgency_level low
 set -U __done_notification_urgency_level_failure normal
@@ -99,7 +98,8 @@ function fish_greeting -d "Lasita-a diri saluton"
     # ifc | ponysay -c # International Fixed Calendar with Ponysay
     # oblique-strategies | pokemonsay -N # Oblique Strategies with Pokemonsay
     # oblique-strategies | ponysay -c # Oblique Strategies with Ponysay
-    fortune | pokemonsay -N # Fortune with Pokemonsay
-    # fortune | ponysay -c # Fortune with Ponysay
+    fortune -a | pokemonsay -N # Fortune with Pokemonsay
+    # fortune -a | ponysay -c # Fortune with Ponysay
+    # echo (beats) (fortune) | pokemonsay -N # .beats, fortune & pokemonsay
     # set_color normal
 end
