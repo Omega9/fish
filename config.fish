@@ -18,21 +18,37 @@
 # My fish config.
 
 ## Set PATH
-set -x GOROOT (go env GOROOT)
-set -x GOPATH $HOME/src/go
-set -x GOBIN $GOPATH/bin
-set -x GOTOOLS $GOPATH/pkg/tool/
+fish_add_path   $HOME/Applications \
+                $HOME/.local/bin \
+                $HOME/.cargo/bin \
+                $HOME/src/go/bin \
+                $HOME/.local/share/pnpm
+
+# Go Path
+if type -q go
+    set -x GOROOT (go env GOROOT)
+    set -x GOPATH $HOME/src/go
+    set -x GOBIN $GOPATH/bin
+    set -x GOTOOLS $GOPATH/pkg/tool/
+end
+
+# set -x GOROOT (go env GOROOT)
+# set -x GOPATH $HOME/src/go
+# set -x GOBIN $GOPATH/bin
+# set -x GOTOOLS $GOPATH/pkg/tool/
+
 set -x PNPM_HOME $HOME/.local/share/pnpm
-set -x PATH $PATH $HOME/Applications $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PNPM_HOME
+
+# set -x PATH $PATH $HOME/Applications $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PNPM_HOME
 
 ## Audio plugins
-set -x CLAP_PATH /usr/lib/clap/ /usr/local/lib/clap $HOME/Audio/Plugins/CLAP
-set -x LV2_PATH /usr/lib/lv2 /usr/local/lib/lv2 $HOME/Audio/Plugins/LV2
-set -x VST_PATH /usr/lib/vst /usr/local/lib/vst $HOME/Audio/Plugins/VST2
-set -x VST3_PATH /usr/lib/vst3 /usr/local/lib/vst3 $HOME/Audio/Plugins/VST3
-set -x LXVST_PATH /usr/lib/lxvst /usr/local/lib/lxvst $HOME/.lxvst
-set -x LADSPA_PATH /usr/lib/ladspa /usr/local/lib/ladspa $HOME/.ladspa
-set -x DSSI_PATH /usr/lib/dssi /usr/local/lib/dssi $HOME/.dssi
+set -x CLAP_PATH    /usr/lib/clap/  /usr/local/lib/clap $HOME/Audio/Plugins/CLAP
+set -x VST_PATH     /usr/lib/vst    /usr/local/lib/vst  $HOME/Audio/Plugins/VST2
+set -x VST3_PATH    /usr/lib/vst3   /usr/local/lib/vst3 $HOME/Audio/Plugins/VST3
+set -x LV2_PATH     /usr/lib/lv2    /usr/local/lib/lv2  $HOME/Audio/Plugins/LV2
+set -x LXVST_PATH   /usr/lib/lxvst  /usr/local/lib/lxvst    $HOME/.lxvst
+set -x LADSPA_PATH  /usr/lib/ladspa /usr/local/lib/ladspa   $HOME/.ladspa
+set -x DSSI_PATH    /usr/lib/dssi   /usr/local/lib/dssi     $HOME/.dssi
 
 ## Export
 set -gx EDITOR micro
@@ -47,7 +63,7 @@ set --export XDG_CURRENT_DESKTOP kde
 set --export KDE_FULL_SESSION true
 set --export XCURSOR_SIZE 24
 set --export XCURSOR_THEME Radioactive-white
-set --export GTK_THEME Breeze
+# set --export GTK_THEME Breeze:dark
 set --export GTK_USE_PORTAL 1
 set --export SSH_ASKPASS /usr/bin/ksshaskpass
 set --export SSH_ASKPASS_REQUIRE prefer
