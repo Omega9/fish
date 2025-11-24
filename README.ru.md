@@ -24,16 +24,16 @@
 
 В этой конфигурации установлен [fisher](https://github.com/jorgebucaran/fisher) и несколько дополнений, которые можно обновлять с его помощью:
 - [bobthefish](https://github.com/oh-my-fish/theme-bobthefish)
-- [fzf](https://github.com/jethrokuan/fzf)
-- [Foreign Environment](https://github.com/oh-my-fish/plugin-foreign-env)
-- [replay.fish](https://github.com/jorgebucaran/replay.fish)
-- [to-fish](https://github.com/joehillen/to-fish)
-- [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [done](https://github.com/franciscolourenco/done)
 - [extract](https://github.com/oh-my-fish/plugin-extract)
-- [fish-bd](https://github.com/0rax/fish-bd)
+- [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [fish-async-prompt](https://github.com/acomagu/fish-async-prompt)
+- [fish-bd](https://github.com/0rax/fish-bd)
+- [Foreign Environment](https://github.com/oh-my-fish/plugin-foreign-env)
+- [fzf](https://github.com/jethrokuan/fzf)
+- [replay.fish](https://github.com/jorgebucaran/replay.fish)
 - [Sponge](https://github.com/meaningful-ooo/sponge)
+- [to-fish](https://github.com/joehillen/to-fish)
 - [up](https://github.com/shannonmoeller/up)
 
 `/functions` содержит fisher и все установленные с его помощью функции.
@@ -65,14 +65,15 @@
 - [Tere](https://github.com/mgunyho/tere) - быстрая альтернатива `cd + ls`
 - [Delta](https://github.com/dandavison/delta) для `diff`
 - [fd](https://github.com/sharkdp/fd) для `find`
-- [ripgrep](https://github.com/BurntSushi/ripgrep) для `grep`
+- [fzf](https://junegunn.github.io/fzf/) - fuzzy поиск
+- ~~[ripgrep](https://github.com/BurntSushi/ripgrep) для `grep`~~
+- [Btop](https://github.com/aristocratos/btop) для `top`
+- [Micro editor](https://micro-editor.github.io/) - текстовый редактор
 - [Youtube-dl](https://youtube-dl.org/), но я рекомендую использовать [yt-dlp](https://github.com/yt-dlp/yt-dlp) с [подменой](https://aur.archlinux.org/packages/yt-dlp-drop-in)
 - [Gallery-dl](https://github.com/mikf/gallery-dl)
 - Tor для Youtube-dl и Gallery-dl
 - Pandoc для `docx2md`
 - [Gist](https://github.com/defunkt/gist)
-- [fzf](https://github.com/junegunn/fzf)
-- [Micro editor](https://micro-editor.github.io/)
 - [FFmpeg](https://ffmpeg.org) для `ffc`
 - [ImageMagick](https://imagemagick.org) для `imc`
 - *(опционально)* `kioclient` и `ktrash6` из KDE для корзины

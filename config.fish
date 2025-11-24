@@ -67,8 +67,13 @@ set --export XCURSOR_THEME Radioactive-white
 set --export GTK_USE_PORTAL 1
 set --export SSH_ASKPASS /usr/bin/ksshaskpass
 set --export SSH_ASKPASS_REQUIRE prefer
+
 ## Wine
 set -gx WINEFSYNC 1
+
+# True colors
+set -x COLORTERM truecolor
+set -x TERM xterm-256color
 
 ## Fix Flameshot on Wayland
 # set --export QT_SCREEN_SCALE_FACTORS "1;1"

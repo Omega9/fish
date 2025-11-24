@@ -24,16 +24,16 @@ However, the configuration is not overcomplicated and is designed for normal eve
 
 This configuration has [fisher](https://github.com/jorgebucaran/fisher) installed and several add-ons that can be updated with it:
 - [bobthefish](https://github.com/oh-my-fish/theme-bobthefish)
-- [fzf](https://github.com/jethrokuan/fzf)
-- [Foreign Environment](https://github.com/oh-my-fish/plugin-foreign-env)
-- [replay.fish](https://github.com/jorgebucaran/replay.fish)
-- [to-fish](https://github.com/joehillen/to-fish)
-- [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [done](https://github.com/franciscolourenco/done)
 - [extract](https://github.com/oh-my-fish/plugin-extract)
-- [fish-bd](https://github.com/0rax/fish-bd)
+- [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 - [fish-async-prompt](https://github.com/acomagu/fish-async-prompt)
+- [fish-bd](https://github.com/0rax/fish-bd)
+- [Foreign Environment](https://github.com/oh-my-fish/plugin-foreign-env)
+- [fzf](https://github.com/jethrokuan/fzf)
+- [replay.fish](https://github.com/jorgebucaran/replay.fish)
 - [Sponge](https://github.com/meaningful-ooo/sponge)
+- [to-fish](https://github.com/joehillen/to-fish)
 - [up](https://github.com/shannonmoeller/up)
 
 `/functions` contains fisher and all functions installed with it.
@@ -65,14 +65,15 @@ Quick reference:
 - [Tere](https://github.com/mgunyho/tere) - a faster alternative to `cd + ls`
 - [Delta](https://github.com/dandavison/delta) for `diff`
 - [fd](https://github.com/sharkdp/fd) for `find`
-- [ripgrep](https://github.com/BurntSushi/ripgrep) for `grep`
+- [fzf](https://junegunn.github.io/fzf/) - fuzzy finder
+- ~~[ripgrep](https://github.com/BurntSushi/ripgrep) for `grep`~~
+- [Btop](https://github.com/aristocratos/btop) for `top`
+- [Micro editor](https://micro-editor.github.io/) - text editor
 - [Youtube-dl](https://youtube-dl.org/), but I recommend [yt-dlp](https://github.com/yt-dlp/yt-dlp) with a [drop-in](https://aur.archlinux.org/packages/yt-dlp-drop-in)
 - [Gallery-dl](https://github.com/mikf/gallery-dl)
 - Tor for torifying Youtube-dl and Gallery-dl
 - Pandoc for `docx2md`
 - [Gist](https://github.com/defunkt/gist)
-- [fzf](https://github.com/junegunn/fzf)
-- [Micro editor](https://micro-editor.github.io/)
 - [FFmpeg](https://ffmpeg.org) for `ffc`
 - [ImageMagick](https://imagemagick.org) for `imc`
 - *(optional)* `kioclient` and `ktrash6` from KDE for trash bin

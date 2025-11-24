@@ -317,9 +317,9 @@ end
 # end
 
 # ripgrep
-function grep --description 'Color grep'
-    command rg --color=auto $argv
-end
+# function grep --description 'Color grep'
+#    command rg --color=auto $argv
+# end
 
 function du --description 'Count space'
     command du -h $argv
@@ -344,9 +344,9 @@ function diff --wraps='delta' --description 'A viewer for git and diff output'
     delta $argv
 end
 
-# Htop
-function top --wraps='sudo htop' --description Htop
-    sudo htop $argv
+# Btop
+function top --wraps='sudo btop' --description Btop
+    sudo btop $argv
 end
 
 # "command not found"
@@ -396,21 +396,21 @@ function emptytrash --wraps='ktrash6 --empty' --description 'Empty trash bin'
 end
 
 function mkcd --description "Create and cd to directory"
-    mkdir $argv
+    mkdir -pv $argv
     and cd $argv
 end
 
 # Copy full file path
-function copypath --description "Copy full file path"
-    switch (echo $XDG_SESSION_TYPE)
-        case x11
-            readlink -e . | xclip -sel clip
-            echo "copied to clipboard"
-        case wayland
-            readlink -e . | wl-copy
-            echo "copied to clipboard"
-    end
-end
+# function copypath --description "Copy full file path"
+#     switch (echo $XDG_SESSION_TYPE)
+#         case x11
+#             readlink -e . | xclip -sel clip
+#             echo "copied to clipboard"
+#         case wayland
+#             readlink -e . | wl-copy
+#             echo "copied to clipboard"
+#     end
+# end
 
 ## Copy full file path - Xorg
 # function copypath --description "Copy full file path"
@@ -419,10 +419,10 @@ end
 # end
 
 ## Copy full file path - Wayland
-# function copypath --description "Copy full file path"
-#     readlink -e . | wl-copy
-#     echo "copied to clipboard"
-# end
+function copypath --description "Copy full file path"
+    readlink -e . | wl-copy
+    echo "copied to clipboard"
+end
 
 # Touch run.sh  for stealing stuff
 function mkshellscript --description 'Make run.sh for stealing stuff'
@@ -431,8 +431,8 @@ function mkshellscript --description 'Make run.sh for stealing stuff'
 # gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp '
 # torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp '
 
-# gallery-dl --cookies-from-browser vivaldi '
-# torify gallery-dl --cookies-from-browser vivaldi '
+# yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 -t mp4'
+# torify yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 -t mp4'
 
 # yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 '
 # torify yt-dlp --cookies-from-browser vivaldi --trim-filenames 230 '" >run.sh
@@ -480,23 +480,23 @@ function launch --description "Launch program"
 end
 
 ## Copypaste
-function pbcopy --description "Copy data from STDIN to the clipboard"
-    switch (echo $XDG_SESSION_TYPE)
-        case x11
-            xclip -selection clipboard
-        case wayland
-            wl-copy $argv
-    end
-end
+# function pbcopy --description "Copy data from STDIN to the clipboard"
+#     switch (echo $XDG_SESSION_TYPE)
+#         case x11
+#             xclip -selection clipboard
+#         case wayland
+#             wl-copy $argv
+#     end
+# end
 
-function pbpaste --description "Paste data from the Clipboard"
-    switch (echo $XDG_SESSION_TYPE)
-        case x11
-            xclip -selection clipboard -o
-        case wayland
-            wl-paste
-    end
-end
+# function pbpaste --description "Paste data from the Clipboard"
+#     switch (echo $XDG_SESSION_TYPE)
+#         case x11
+#             xclip -selection clipboard -o
+#         case wayland
+#             wl-paste
+#     end
+# end
 
 ## Copypaste - Xorg
 # function pbcopy --description "Copy data from STDIN to the clipboard"
@@ -507,14 +507,14 @@ end
 #     xclip -selection clipboard -o
 # end
 
-## Copypaste - Wayland
-# function pbcopy --description "Copy data from STDIN to the clipboard"
-#     wl-copy $argv
-# end
+# Copypaste - Wayland
+function pbcopy --description "Copy data from STDIN to the clipboard"
+    wl-copy $argv
+end
 
-# function pbpaste  --description "Paste data from the Clipboard"
-#     wl-paste
-# end
+function pbpaste  --description "Paste data from the Clipboard"
+    wl-paste
+end
 
 # Generate password
 function generate_password
@@ -613,6 +613,19 @@ function interfaces
     ip address | grep -P --only-matching "(\d: \w+)|(state \w+)|(link/\w+ [a-f0-9:]+)|(inet [0-9.]+)"
 end
 
+# Wireguard on/off toggle via NetworkManager
+function wgtoggle
+    set conn "Wireguard"
+    set state (nmcli -t -f NAME,STATE connection show --active | grep "^$conn:" | cut -d: -f2)
+    if test "$state" = "activated"
+        nmcli connection down $conn
+        echo "$conn is off"
+    else
+        nmcli connection up $conn
+        echo "$conn is on"
+    end
+end
+
 function wget --description 'Download with Wget'
     command wget -c $argv
 end
@@ -667,7 +680,7 @@ end
 #####################
 
 # Yt-dlp extract
-abbr yta-aac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format aac'
+abbr yta-aac 'yt-dlp --extract-audio --audio-format aac'
 abbr yta-best 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format best'
 abbr yta-flac 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format flac'
 abbr yta-m4a 'yt-dlp --cookies-from-browser vivaldi --extract-audio --audio-format m4a'
@@ -689,18 +702,18 @@ abbr tyta-wav 'torify yt-dlp --cookies-from-browser vivaldi --extract-audio --au
 abbr tytv-best 'torify yt-dlp --cookies-from-browser vivaldi -f bestvideo+bestaudio'
 
 # Yt-dlp
-abbr ydl 'yt-dlp --cookies-from-browser vivaldi'
-abbr ydlb 'yt-dlp --cookies-from-browser vivaldi -a'
-abbr tydl 'torify yt-dlp --cookies-from-browser vivaldi'
-abbr tydlb 'torify yt-dlp --cookies-from-browser vivaldi -a'
+abbr ydl 'yt-dlp --cookies-from-browser vivaldi -t mp4'
+abbr ydlb 'yt-dlp --cookies-from-browser vivaldi -t mp4 -a'
+abbr tydl 'torify yt-dlp --cookies-from-browser vivaldi -t mp4'
+abbr tydlb 'torify yt-dlp --cookies-from-browser vivaldi -t mp4 -a'
 
 # Gallery-dl
-abbr gdl 'gallery-dl --cookies-from-browser vivaldi'
-abbr gdlb 'gallery-dl --cookies-from-browser vivaldi -i'
-abbr tgdl 'torify gallery-dl --cookies-from-browser vivaldi'
-abbr tgdlb 'torify gallery-dl --cookies-from-browser vivaldi -i'
+abbr gdl 'gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp'
+abbr gdlb 'gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp -i'
+abbr tgdl 'torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp'
+abbr tgdlb 'torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp -i'
 
-abbr gdl-lossy 'gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp'
-abbr gdlb-lossy 'gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp -i'
-abbr tgdl-lossy 'torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp'
-abbr tgdlb-lossy 'torify gallery-dl --cookies-from-browser vivaldi -P jpg-to-webp -i'
+abbr gdl-lossless 'gallery-dl --cookies-from-browser vivaldi '
+abbr gdlb-lossless 'gallery-dl --cookies-from-browser vivaldi -i'
+abbr tgdl-lossless 'torify gallery-dl --cookies-from-browser vivaldi'
+abbr tgdlb-lossless 'torify gallery-dl --cookies-from-browser vivaldi -i'
